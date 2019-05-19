@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "CV"
-permalink: /cv/
+title: "Resume"
+permalink: /resume/
 author_profile: true
 redirect_from:
   - /resume
@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-The University of Iowa
+###The University of Iowa
 * BBA, Business Analytics
 * M.S. in Jekyll, GitHub University, 2014
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
