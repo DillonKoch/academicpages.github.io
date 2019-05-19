@@ -4,38 +4,38 @@ title: "Resume"
 permalink: /resume/
 author_profile: true
 redirect_from:
-  - /resume
+  - /cv
 ---
 
 {% include base_path %}
 
 Education
 ======
-###The University of Iowa
+The University of Iowa
 * BBA, Business Analytics
 * M.S. in Jekyll, GitHub University, 2014
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Summer 2019: Data Science Intern
+  * Collins Aerospace
+  * bullet 1 about the things I did
+  * bullet 2
 
-* Fall 2015: Research Assistant
-  * Github University
+* August 2018 - May 2019: Data Management and Analysis Student Assistant
+  * University of Iowa Academic Support & Retention
   * Duties included: Merging pull requests
   * Supervisor: Professor Hub
   
 Skills
 ======
-* Skill 1
-* Skill 2
+* Python
+* SQL
   * Sub-skill 2.1
   * Sub-skill 2.2
   * Sub-skill 2.3
-* Skill 3
+* TensorFlow
 
 Publications
 ======
