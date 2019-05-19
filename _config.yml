@@ -84,11 +84,11 @@ author:
   avatar           : "https://avatars1.githubusercontent.com/u/44272245?s=400&u=d1a436604f0fdb4f652d1f02d4eb7e6a4a156ce0&v=4"
   bio              : "Data Science Intern at Collins Aerospace"
   location         : "Cedar Rapids, IA"
-  employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  employer         : "Collins Aerospace"
+  pubmed           : 
+  googlescholar    : 
+  email            : "dillon-koch@uiowa.edu"
+  researchgate     : 
   uri              :
   bitbucket        :
   codepen          :
@@ -96,13 +96,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/DillonKoch"
+  github           : "DillonKoch"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/dillon-koch/"
+  linkedin         : "dillon-koch/"
   orcid            : 
   pinterest        :
   soundcloud       :
