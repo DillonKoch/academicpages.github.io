@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Dillon Koch"
-  avatar           : "profile.png"
+  avatar           : "https://www.flickr.com/photos/171428178@N08/47094172164/in/dateposted-public/"
   bio              : "Data Science Intern at Collins Aerospace"
   location         : "Cedar Rapids, IA"
   employer         :
