@@ -1,6 +1,6 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Excelling@Iowa Survey Charts"
+excerpt: "I wrote this program in Python to quickly generate charts about two populations of students who filled out the annual Excelling@Iowa survey, given to freshmen and new transfer students."
 collection: portfolio
 ---
 
