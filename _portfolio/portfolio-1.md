@@ -9,8 +9,11 @@ Part of my job as a Data Management and Analysis Student Assistant at the Academ
 
 People and departments throughout the university often want to see how certain groups of students' responses to the survey differ. For example, the college of business may ask for a report explaining business students' responses to the survey and how they differ from non-business students. To create this report, I used to use Excel to create pivot tables and charts by hand:
 
-![image](https://live.staticflickr.com/65535/47943232942_dcc56d0843_n.jpg)
-![image](https://live.staticflickr.com/65535/47943247758_0dca6ba683_c.jpg)
+
+![pic 1](https://live.staticflickr.com/65535/47943425576_40fe968ff1_b.jpg)
+
+
+
 
 
 
