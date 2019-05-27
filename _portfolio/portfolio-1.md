@@ -14,7 +14,7 @@ People and departments throughout the university often want to see how certain g
 
 ![pic 3](https://live.staticflickr.com/65535/47943431182_dd66b09873_o.png)
 
-------
+____________________________________________________________________________
 ![pic 4](https://live.staticflickr.com/65535/47943474541_25cf540244_b.jpg)
 ![pic 5](https://live.staticflickr.com/65535/47943489693_a1ed863571_b.jpg)
 
