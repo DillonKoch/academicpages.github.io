@@ -1,3 +1,9 @@
+---
+title: "Portfolio item number 2"
+excerpt: "Short description of portfolio item number 2 <br/><img src='/images/500x300.png'>"
+collection: portfolio
+---
+
 Part of my job as a Data Management and Analysis Student Assistant at the Academic Support & Retention department at the University of Iowa deals with the Excelling@Iowa survey. This survey is given each semester to freshmen and new transfer students. It asks them 89 questions about their experience at the University of Iowa including their academics, study habits, social experiences, financial situation, future plans, and more. 
 
 People and departments throughout the university often want to see how certain groups of students' responses to the survey differ. For example, the college of business may ask for a report explaining business students' responses to the survey and how they differ from non-business students. To create this report, I used to use Excel to create pivot tables and charts by hand:
