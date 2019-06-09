@@ -130,8 +130,11 @@ When the instance was created, the other 22 methods were also defined at the sam
 ```python
 Compare_17_18.plot2()
 ```
+![plot1](https://live.staticflickr.com/65535/48031272138_896638b292_o.png)
 
 
 ### Conclusion
 This was a cool project for me to use some of the Python skills I've been learning and save myself a lot of time at work. It used to take about 5-6 hours of monotonous work to create those 22 charts by hand, but now it takes at most 10 minutes to use this program from start to finish!
+
+
 
