@@ -32,7 +32,6 @@ import math
 # import data
 All = pd.read_csv('ALL SURVEYS Fall 16 - Spring 19.csv')
 ```
-Now all the survey data from Fall 2016 through Spring 2019 is imported.
 
 **Step 2: Separate Data into Two Populations**
 
@@ -127,8 +126,12 @@ Compare_17_18.plot1()
 ```
 ![plot1](https://live.staticflickr.com/65535/48026562768_ffa570f8f4_o.png)
 
-The other methods are all very similar, they just use different questions to create the charts.
+When the instance was created, the other 22 methods were also defined at the same time. The other methods are all very similar, they just use different questions to create the charts. So now this is all it takes to get the next chart:
+```python
+Compare_17_18.plot2()
+```
+
 
 ### Conclusion
-This was a cool project for me to implement some of the Python skills I've been learning and save myself a lot of time at work. It used to take about 5-6 hours of monotonous work to create those 22 charts by hand, but now it takes at most 10 minutes to use this program from start to finish!
+This was a cool project for me to use some of the Python skills I've been learning and save myself a lot of time at work. It used to take about 5-6 hours of monotonous work to create those 22 charts by hand, but now it takes at most 10 minutes to use this program from start to finish!
 
