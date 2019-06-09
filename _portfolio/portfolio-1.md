@@ -1,13 +1,6 @@
----
-title: "Excelling@Iowa Survey Chart Program"
-excerpt: "Short description of portfolio item number 2 <br/><img src='/images/500x300.png'>"
-collection: portfolio
----
-
 Part of my job as a Data Management and Analysis Student Assistant at the Academic Support & Retention department at the University of Iowa deals with the Excelling@Iowa survey. This survey is given each semester to freshmen and new transfer students. It asks them 89 questions about their experience at the University of Iowa including their academics, study habits, social experiences, financial situation, future plans, and more. 
 
 People and departments throughout the university often want to see how certain groups of students' responses to the survey differ. For example, the college of business may ask for a report explaining business students' responses to the survey and how they differ from non-business students. To create this report, I used to use Excel to create pivot tables and charts by hand:
-
 ![break](https://live.staticflickr.com/65535/47943619652_d7b19ded95_o.png)
 ![pic 1](https://live.staticflickr.com/65535/47943425576_40fe968ff1_b.jpg)
 ![pic 2](https://live.staticflickr.com/65535/47943457771_80e884fbcd_o.png)
@@ -17,7 +10,8 @@ People and departments throughout the university often want to see how certain g
 ![pic 5](https://live.staticflickr.com/65535/47943489693_a1ed863571_b.jpg)
 ![break](https://live.staticflickr.com/65535/47943619652_d7b19ded95_o.png)
 ## Code Sample:
-#### Continue reading if you're interested in some of the Python code that I used in this function for each of the steps above.
+**Continue reading if you're interested in the Python code behind how this program works.**
+
 **Step 1: Import Survey Data**
 
 ```python
@@ -31,9 +25,10 @@ import math
 # import data
 All = pd.read_csv('ALL SURVEYS Fall 16 - Spring 19.csv')
 ```
-Now that all the survey data from Fall 2016 through Spring 2019 is imported, I'll separate the data into the two populations being compared in the report...
+Now all the survey data from Fall 2016 through Spring 2019 is imported.
 
 **Step 2: Separate Data into Two Populations**
+
 As an example, I'll compare the Fall 2017 survey results to the Fall 2018 results.
 
 ```python
@@ -45,6 +40,7 @@ df18 = All[All['Survey'] == 'Fall 2018']
 ```
 
 **Steps 3 - 4: Create charts for each group's average responses**
+
 To calculate the average response to each question, I created a Python class named 'Chart'. 
 ```python
 class Chart:
@@ -56,7 +52,7 @@ class Chart:
     self.Pop1_name = Pop1_name
     self.Pop2_name = Pop2_name
 ```
-Each instance of the method is created with its name, self, the two datasets including the students' survey responses, Pop1 and Pop2 (df17 and df18 in this example), and two strings representing the name for each group in the final charts.
+Each instance of the class is created with its name, self, the two datasets including the students' survey responses, Pop1 and Pop2 (df17 and df18 in this example), and two strings representing the name for each group in the final charts.
 
 The class also includes 23 methods. Methods 1-22 each create and display one chart visualizing responses from the survey, and the final method displays all charts at once.
 
