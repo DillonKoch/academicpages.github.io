@@ -1,6 +1,8 @@
 ---
 title: "Excelling@Iowa Survey Charts"
-excerpt: "I designed an interactive Python program to generate customizable data visualizations about student responses to the University’s annual Excelling@Iowa survey, given to freshmen and new transfer students <br/><img src='https://live.staticflickr.com/65535/48026562768_ffa570f8f4_o.png'>"
+excerpt: "I designed an interactive Python program to generate customizable data visualizations about student responses to the University’s annual Excelling@Iowa survey, given to freshmen and new transfer students.
+
+<br/><img src='https://live.staticflickr.com/65535/48026562768_ffa570f8f4_o.png'>"
 collection: portfolio
 ---
 Part of my job as a Data Management and Analysis Student Assistant at the Academic Support & Retention department at the University of Iowa deals with the Excelling@Iowa survey. This survey is given each semester to freshmen and new transfer students. It asks them 89 questions about their experience at the University of Iowa including their academics, study habits, social experiences, financial situation, future plans, and more. 
