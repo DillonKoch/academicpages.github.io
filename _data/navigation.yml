@@ -18,8 +18,8 @@ main:
 #  - title: "Resume"
 #    url: /resume/
     
-  - title: "Guide"
-    url: /markdown/
+  - title: "Resume"
+    url: /Resume/
     
   - test: "Test"
     url: /test/
