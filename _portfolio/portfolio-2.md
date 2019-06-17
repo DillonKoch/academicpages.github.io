@@ -73,15 +73,15 @@ Here's an example of this function being used:
 print(TCheadlines(limit=10, keywords = ['Tesla', 'Silicon Valley']))
 ```
 >Week-in-Review: E3’s forever franchises and Elon Musk’s submersible Tesla
-
+>
 >https://techcrunch.com/2019/06/16/week-in-review-e3s-forever-franchises-and-elon-musks-submersible-tesla/
 >
 >Meet TezLab, the Fitbit for Tesla vehicles
-
+>
 >https://techcrunch.com/2019/06/15/meet-tezlab-the-fitbit-for-tesla-vehicles/
 >
 >Equity transcribed: Silicon Valley’s founder fetish infantilizes public companies
-
+>
 >https://techcrunch.com/2019/06/15/equity-transcribed-silicon-valleys-founder-fetish-infantilizes-public-companies/
 
 Since there were only three articles that included the keywords I asked for in their headlines, only three were returned. Had I not included any keywords, 10 articles would be returned.
@@ -123,23 +123,23 @@ print(vergeHeadlines(content='AI', limit=5, keywords=[]))
 ```
 >The state of AI in 2019
 
-https://www.theverge.com/2019/1/28/18197520/ai-artificial-intelligence-machine-learning-computational-science
+>https://www.theverge.com/2019/1/28/18197520/ai-artificial-intelligence-machine-learning-computational-science
 
 >The Real-World AI Issue
 
-https://www.theverge.com/2019/1/28/18194816/ai-artificial-intelligence-issue
+>https://www.theverge.com/2019/1/28/18194816/ai-artificial-intelligence-issue
 
 >Adobe’s prototype AI tool automatically spots Photoshopped faces
 
-https://www.theverge.com/2019/6/14/18678782/adobe-machine-learning-ai-tool-spot-fake-facial-edits-liquify-manipulations
+>https://www.theverge.com/2019/6/14/18678782/adobe-machine-learning-ai-tool-spot-fake-facial-edits-liquify-manipulations
 
 >Congress grapples with how to regulate deepfakes
 
-https://www.theverge.com/2019/6/13/18677847/deep-fakes-regulation-facebook-adam-schiff-congress-artificial-intelligence
+>https://www.theverge.com/2019/6/13/18677847/deep-fakes-regulation-facebook-adam-schiff-congress-artificial-intelligence
 
 >A spy reportedly used an AI-generated profile picture to connect with sources on LinkedIn
 
-https://www.theverge.com/2019/6/13/18677341/ai-generated-fake-faces-spy-linked-in-contacts-associated-press
+>https://www.theverge.com/2019/6/13/18677341/ai-generated-fake-faces-spy-linked-in-contacts-associated-press
 
 My function for the Ringer works the same way as The Verge, inspecting the NFL, NBA, Tech, and Politics sections of that website.
 
