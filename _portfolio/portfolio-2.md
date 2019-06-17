@@ -57,13 +57,11 @@ Once we have all the headlines and links, it's time to put them in a message tha
   if len(keywords) == 0:    
     for pair in bothList:
       message += str(pair[0]) + '\n' + str(pair[1]) + '\n\n'
-      #print(pair, '\n')
   else:
     for word in keywords:
       for pair in bothList:
         if word in pair[0]:
           message += str(pair[0]) + '\n' + str(pair[1]) + '\n\n'
-          #print(pair)
       
   return message
   ```
