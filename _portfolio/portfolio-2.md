@@ -73,7 +73,6 @@ Here's an example of this function being used:
 print(TCheadlines(limit=10, keywords = ['Tesla', 'Silicon Valley']))
 ```
 >Week-in-Review: E3’s forever franchises and Elon Musk’s submersible Tesla
->
 >https://techcrunch.com/2019/06/16/week-in-review-e3s-forever-franchises-and-elon-musks-submersible-tesla/
 >
 >Meet TezLab, the Fitbit for Tesla vehicles
