@@ -114,6 +114,4 @@ My function for the Ringer works the same way as The Verge, inspecting the NFL, 
 ## End Result
 Finally, I use a function that combines these news-related functions together to create one big message that I send in an email to myself. The email is automatically sent from a gmail account I created for this purpose to my other email account. Running the program takes about 10 seconds in total, and is a very convenient way for me to get the news I want every day!
 
-If you'd like to be sent one of these emails just to see what they look like (or if you want them daily) let me know at
-
-dillon-koch@uiowa.edu and I'll send you one!
+If you'd like to be sent one of these emails just to see what they look like (or if you want them daily) send me an email at dillon-koch@uiowa.edu and I'll send you one!
