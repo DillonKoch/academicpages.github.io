@@ -52,6 +52,7 @@ The next step was to create a list that includes all the headlines and links. To
 Once we have all the headlines and links, it's time to put them in a message that will later be inserted into an email. To do this, I begin by creating an emtpy string named *_message_*. After that, articles can be inserted in one of two ways:
 1. If a list of keywords was given to the second argument to this function, _*keywords*_, then only the articles whose headlines have one of the words/phrases from the *_keywords_* list will be included.
 2. Otherwise, the function will just print out the headline and link for the number of articles you ask for.
+
 ```python
   # putting all the headlines and links into a final message
   message = ''
