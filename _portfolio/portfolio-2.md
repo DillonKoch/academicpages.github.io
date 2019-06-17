@@ -3,8 +3,6 @@ title: "News Web Scraper"
 excerpt: "This is a Python program I wrote to automatically email me news I'm interested in every day. <br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
-## News Web Scraper
-
 After working on a project as a Data Science intern at Collins Aerospace in which I scraped the web for security-related news about the company and its products, I wanted to apply what I learned in another setting. I thought one useful way to use web scraping in Python would be to write a program that automatically emails me with news I'm interested in. 
 
 To do this, I wrote functions for each source I wanted to get news from. Each function inspects the site's HTML code to extract headlines and links, then puts them in a brief message that will be emailed to me. For example, here's the function I used to get news from TechCrunch:
@@ -22,7 +20,7 @@ from datetime import date
 ```
 **Then I began writing the function for TechCrunch**
 
-This code will use the TechCrunch URL to extract the site's HTML, encode it properly, and store it in the 'sp' variable:
+This code will use the TechCrunch URL to extract the site's HTML, encode it properly, and store it in the *_sp_* variable:
 ```python
 # Scraping news from TechCrunch:
 def TCheadlines(limit=3, keywords=[]):
@@ -52,7 +50,6 @@ The next step was to create a list that includes all the headlines and links. To
 Once we have all the headlines and links, it's time to put them in a message that will later be inserted into an email. To do this, I begin by creating an emtpy string named *_message_*. After that, articles can be inserted in one of two ways:
 1. If a list of keywords was given to the second argument to this function, _*keywords*_, then only the articles whose headlines have one of the words/phrases from the *_keywords_* list will be included.
 2. Otherwise, the function will just print out the headline and link for the number of articles you ask for.
-
 ```python
   # putting all the headlines and links into a final message
   message = ''
@@ -73,17 +70,7 @@ Here's an example of this function being used:
 ```python
 print(TCheadlines(limit=10, keywords = ['Tesla', 'Silicon Valley']))
 ```
->Week-in-Review: E3’s forever franchises and Elon Musk’s submersible Tesla
->https://techcrunch.com/2019/06/16/week-in-review-e3s-forever-franchises-and-elon-musks-submersible-tesla/
->
->Meet TezLab, the Fitbit for Tesla vehicles
->
->https://techcrunch.com/2019/06/15/meet-tezlab-the-fitbit-for-tesla-vehicles/
->
->Equity transcribed: Silicon Valley’s founder fetish infantilizes public companies
->
->https://techcrunch.com/2019/06/15/equity-transcribed-silicon-valleys-founder-fetish-infantilizes-public-companies/
-
+![TechCrunch 3](https://live.staticflickr.com/65535/48076231758_cd544d6523_b.jpg)
 Since there were only three articles that included the keywords I asked for in their headlines, only three were returned. Had I not included any keywords, 10 articles would be returned.
 
 ### Functions for The Verge and The Ringer
@@ -121,29 +108,11 @@ Here's an example of this function being used:
 ```python
 print(vergeHeadlines(content='AI', limit=5, keywords=[]))
 ```
->The state of AI in 2019
-
->https://www.theverge.com/2019/1/28/18197520/ai-artificial-intelligence-machine-learning-computational-science
-
->The Real-World AI Issue
-
->https://www.theverge.com/2019/1/28/18194816/ai-artificial-intelligence-issue
-
->Adobe’s prototype AI tool automatically spots Photoshopped faces
-
->https://www.theverge.com/2019/6/14/18678782/adobe-machine-learning-ai-tool-spot-fake-facial-edits-liquify-manipulations
-
->Congress grapples with how to regulate deepfakes
-
->https://www.theverge.com/2019/6/13/18677847/deep-fakes-regulation-facebook-adam-schiff-congress-artificial-intelligence
-
->A spy reportedly used an AI-generated profile picture to connect with sources on LinkedIn
-
->https://www.theverge.com/2019/6/13/18677341/ai-generated-fake-faces-spy-linked-in-contacts-associated-press
-
+![AI 5](https://live.staticflickr.com/65535/48076231618_df2667facf_b.jpg)
 My function for the Ringer works the same way as The Verge, inspecting the NFL, NBA, Tech, and Politics sections of that website.
 
 ## End Result
 Finally, I use a function that combines these news-related functions together to create one big message that I send in an email to myself. The email is automatically sent from a gmail account I created for this purpose to my other email account. Running the program takes about 10 seconds in total, and is a very convenient way for me to get the news I want every day!
 
-If you'd like to be sent one of these emails just to see what they look like (or if you want them daily) let me know at dillon-koch@uiowa.edu and I'll send you one!
+If you'd like to be sent one of these emails just to see what they look like (or if you want them daily) let me know at
+dillon-koch@uiowa.edu and I'll send you one!
