@@ -1,6 +1,6 @@
 ---
 title: "News Web Scraper"
-excerpt: "This is a Python program I wrote to automatically email me news I'm interested in every day. <br/><img src='/images/500x300.png'>"
+excerpt: "This is a Python program I wrote to automatically email me news I'm interested in every day. https://live.staticflickr.com/65535/48076231618_df2667facf_b.jpg"
 collection: portfolio
 ---
 After working on a project as a Data Science intern at Collins Aerospace in which I scraped the web for security-related news about the company and its products, I wanted to apply what I learned in another setting. I thought one useful way to use web scraping in Python would be to write a program that automatically emails me with news I'm interested in. 
