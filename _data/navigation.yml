@@ -18,8 +18,8 @@ main:
 #  - title: "Blog Posts"
 #    url: /year-archive/
     
-#  - title: "Resume"
-#    url: /resume/
+  - title: "Resume2"
+    url: /files/Resume.pdf/
     
   - title: "Resume"
     url: /Resume/
