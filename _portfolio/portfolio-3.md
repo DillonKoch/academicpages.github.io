@@ -41,7 +41,8 @@ plt.plot(x_axis, planning, label = 'Planning')
 plt.legend(loc='bottom right')
 
 # editing the x and y tick marks to make more sense
-plt.xticks([1, 2, 3, 4], ['Prior to GridEx III\n(2015)', 'GridEx III\n(2016)', 'GridEx IV\n(2017)', 'Dark Sky\n(2018)'])
+plt.xticks([1, 2, 3, 4], ['Prior to GridEx III\n(2015)', 'GridEx III\n(2016)', 
+           'GridEx IV\n(2017)', 'Dark Sky\n(2018)'])
 plt.yticks([0.5, 1.5, 2.5], ['Bad', 'Average', 'Good'])
 
 # adding x and y labels to the plot and changing the size of the x label
@@ -60,6 +61,7 @@ plt.show()
 
 # tried to save it this way, but it didn't work - took a screenshot instead
 plt.savefig('Alliant Energy Perparedness Plot 1.png')
+
 ```
 ## Visualization #2
 The second chart describes how the company performed in eight specific criteria across the same four training events.
@@ -69,13 +71,18 @@ The second chart describes how the company performed in eight specific criteria 
 #### The code I used to create this visualization:
 
 ```python
+# second visualization for alliant energy coop infographics
+
 # import packages
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
 # create the data and put it into a dataframe
-raw_data = {'Exercise_objective': ['Provide Voice Communication', 'Examine Coordination Issues', 'Validate Security Guard Contract', 'Observe Drone Support', 'Perform WICAMS Test', 'Introduce CONOPS', 'National Incident Management System', 'Validate Notification Process'],
+raw_data = {'Exercise_objective': ['Provide Voice Communication', 'Examine Coordination Issues', 
+                                   'Validate Security Guard Contract', 'Observe Drone Support', 
+                                   'Perform WICAMS Test', 'Introduce CONOPS', 
+                                   'National Incident Management System', 'Validate Notification Process'],
             'GridEx_III': [1, 1, 0.2, 0.2, 0.2, 0.2, 1, 0.2],
             'Columbia': [3, 2, 2, 2, 1, 3, 3, 2],
             'GridEx_IV': [3, 2, 2, 3, 0.2, 0.2, 3, 2],
@@ -99,7 +106,10 @@ ax.set_xlabel('Exercise Objective', size=13)
 ax.set_title('Exercise Ratings Over Time', size=14)
 
 # set the tick values
-plt.xticks([0.08, 1.15, 2.3, 3.3, 4.25, 5.25, 6.25, 7.3], ['Provide\nVoice\nCommunication', 'Examine\nCoordination\nIssues', 'Validate\nSecurity Guard\nContract', 'Observe\nDrone\nSupport', 'Perform\nWICAMS Test', 'Introduce\nCONOPS', 'National\nIncident\nManagement\nSystem', 'Validate\nNotification\nProcess'])
+plt.xticks([0.08, 1.15, 2.3, 3.3, 4.25, 5.25, 6.25, 7.3], ['Provide\nVoice\nCommunication', 
+           'Examine\nCoordination\nIssues', 'Validate\nSecurity Guard\nContract', 'Observe\nDrone\nSupport', 
+           'Perform\nWICAMS Test', 'Introduce\nCONOPS', 'National\nIncident\nManagement\nSystem', 
+           'Validate\nNotification\nProcess'])
 plt.yticks([0.2, 1, 2, 3], ['Not Applicable', 'Bad', 'Average', 'Good'], size=12)
 
 # add a legend
@@ -108,6 +118,7 @@ plt.yticks([0.2, 1, 2, 3], ['Not Applicable', 'Bad', 'Average', 'Good'], size=12
 # getting rid of the lines on top and right of the plot - they were unnecessary
 ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
+
 ```
 ### Conclusion
 This project was a good opportunity for me to implement the Python skills I was beginning to learn at the time in a real work setting. It was also a nice way to help another department explain the effect their work had on the company.
