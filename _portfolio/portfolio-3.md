@@ -74,14 +74,17 @@ import numpy as np
 
 # create the data and put it into a dataframe
 raw_data = {'Exercise_objective': ['Provide Voice Communication', 'Examine Coordination Issues', 
-                                   'Validate Security Guard Contract', 'Observe Drone Support', 
+                                   'Validate Security Guard Contract', 
+                                   'Observe Drone Support', 
                                    'Perform WICAMS Test', 'Introduce CONOPS', 
-                                   'National Incident Management System', 'Validate Notification Process'],
+                                   'National Incident Management System', 
+                                   'Validate Notification Process'],
             'GridEx_III': [1, 1, 0.2, 0.2, 0.2, 0.2, 1, 0.2],
             'Columbia': [3, 2, 2, 2, 1, 3, 3, 2],
             'GridEx_IV': [3, 2, 2, 3, 0.2, 0.2, 3, 2],
             'Dark_Sky': [3, 3, 1, 3, 3, 2, 2, 3]}
-df = pd.DataFrame(raw_data, columns = ['Exercise_objective', 'GridEx_III', 'Columbia', 'GridEx_IV', 'Dark_Sky'])
+df = pd.DataFrame(raw_data, columns = ['Exercise_objective', 'GridEx_III', 'Columbia', 
+                                       'GridEx_IV', 'Dark_Sky'])
 
 
 pos = list(range(len(df['GridEx_III'])))
@@ -101,8 +104,9 @@ ax.set_title('Exercise Ratings Over Time', size=14)
 
 # set the tick values
 plt.xticks([0.08, 1.15, 2.3, 3.3, 4.25, 5.25, 6.25, 7.3], ['Provide\nVoice\nCommunication', 
-           'Examine\nCoordination\nIssues', 'Validate\nSecurity Guard\nContract', 'Observe\nDrone\nSupport', 
-           'Perform\nWICAMS Test', 'Introduce\nCONOPS', 'National\nIncident\nManagement\nSystem', 
+           'Examine\nCoordination\nIssues', 'Validate\nSecurity Guard\nContract', 
+           'Observe\nDrone\nSupport', 'Perform\nWICAMS Test', 'Introduce\nCONOPS', 
+           'National\nIncident\nManagement\nSystem', 
            'Validate\nNotification\nProcess'])
 plt.yticks([0.2, 1, 2, 3], ['Not Applicable', 'Bad', 'Average', 'Good'], size=12)
 
