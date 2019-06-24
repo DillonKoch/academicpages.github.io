@@ -1,7 +1,7 @@
 ---
 title: "Alliant Energy Data Visualizations"
 excerpt: "I created two data visualizations to describe the effect a department's training events had on the company's preparation level.
-<br/><img src='https://live.staticflickr.com/65535/48076231618_df2667facf_b.jpg'>"
+<br/><img src='https://live.staticflickr.com/65535/48117195073_1b196bca09_b.jpg'>"
 collection: portfolio
 ---
 As an IT Data Warehouse Business Intelligence Intern at Alliant Energy during summer 2018, I was asked by another department to create data visualizations for them. The Continuity of Operations Department had collected data about the company's preparation level over the course of multiple training exercises and wanted me to display the data for other people in the company to see. After working with the department to get a clear understanding of what they wanted, I created two visualizations using Python.
