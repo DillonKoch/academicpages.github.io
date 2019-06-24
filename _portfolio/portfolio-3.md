@@ -58,10 +58,6 @@ ax.spines['top'].set_visible(False)
 
 # display the plot
 plt.show() 
-
-# tried to save it this way, but it didn't work - took a screenshot instead
-plt.savefig('Alliant Energy Perparedness Plot 1.png')
-
 ```
 ## Visualization #2
 The second chart describes how the company performed in eight specific criteria across the same four training events.
@@ -71,8 +67,6 @@ The second chart describes how the company performed in eight specific criteria 
 #### The code I used to create this visualization:
 
 ```python
-# second visualization for alliant energy coop infographics
-
 # import packages
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -119,6 +113,8 @@ plt.yticks([0.2, 1, 2, 3], ['Not Applicable', 'Bad', 'Average', 'Good'], size=12
 ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 
+# display the plot
+plt.show() 
 ```
 ### Conclusion
 This project was a good opportunity for me to implement the Python skills I was beginning to learn at the time in a real work setting. It was also a nice way to help another department explain the effect their work had on the company.
