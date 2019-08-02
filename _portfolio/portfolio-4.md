@@ -24,20 +24,20 @@ class Bettor:
     self.job = job
     self.numBets = 0
     self.spreadBets = pd.DataFrame(columns=['ID', 'Bet Date', 'Gameday', 'Bet',
-                         'To Win', 'Home Team', 'Away Team', 'Pick',
-                         'Spread', 'League', 'Outcome'])
+                                            'To Win', 'Home Team', 'Away Team', 'Pick',
+                                            'Spread', 'League', 'Outcome'])
     self.moneyLineBets = pd.DataFrame(columns = ['ID', 'Bet Date', 'Gameday', 'Bet',
-                         'To Win', 'Home Team', 'Away Team', 'Pick',
-                         'Money Line', 'League', 'Outcome'])
+                                                 'To Win', 'Home Team', 'Away Team', 'Pick',
+                                                 'Money Line', 'League', 'Outcome'])
     self.parlayBets = pd.DataFrame(columns = ['ID', 'Bet No.', 'Bet Type', 'Bet Date', 'Gameday',
-                               'Bet', 'To Win', 'Home Team', 'Away Team',
-                               'Pick', 'Spread', 'Money Line', 'League', 'Outcome'])
+                                              'Bet', 'To Win', 'Home Team', 'Away Team',
+                                              'Pick', 'Spread', 'Money Line', 'League', 'Outcome'])
     self.propBets = pd.DataFrame(columns = ['ID', 'Bet Date', 'Gameday', 'Bet',
-                         'To Win', 'Pick',
-                         'Money Line', 'League', 'Outcome'])
+                                            'To Win', 'Pick',
+                                            'Money Line', 'League', 'Outcome'])
     self.allBets = pd.DataFrame(columns = ['ID', 'Bet No.', 'Bet Type', 'Bet Date', 'Gameday',
-                               'Bet', 'To Win', 'Home Team', 'Away Team',
-                               'Pick', 'Spread', 'Money Line', 'League', 'Outcome'])
+                                           'Bet', 'To Win', 'Home Team', 'Away Team',
+                                           'Pick', 'Spread', 'Money Line', 'League', 'Outcome'])
 ```
 After creating the constructor, I also wrote methods to populate those dataframes based on the type of bet being made. There is one method for each type of bet (spread, money line, prop, parlay) since they each include slightly different data. 
 
