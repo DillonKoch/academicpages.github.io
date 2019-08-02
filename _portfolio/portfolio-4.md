@@ -1,4 +1,9 @@
-## Lock It In Sports Betting Analysis
+---
+title: "Lock It In Sports Betting Analysis"
+excerpt: "Data I collected and analyzed about the TV show Lock It In (not the pic below)
+<br/><img src='https://live.staticflickr.com/65535/48117188003_5fd758e4cc_o.png'>"
+collection: portfolio
+---
 
 Lock It In is a TV show on Fox Sports 1 focused on sports betting. The show is hosted by Rachel Bonetta and also includes analysts Todd Fuhrman, Clay Travis, and Cousin Sal. Each week the three analysts are given $1,000 to bet on games throughout the week, and usually make 4 bets per day (20/week) Whoever has the most money at the end of the week wins.
 
