@@ -41,7 +41,7 @@ class Bettor:
 ```
 After creating the constructor, I also wrote methods to populate those dataframes based on the type of bet being made. There is one method for each type of bet (spread, money line, prop, parlay) since they each include slightly different data. Every type of bet is also added to the "all bets" dataframe as well.
 
-Here's the method to add a spread bet (e.g. Warriors -3 vs Raptors):
+For example, here's the method I used to add a spread bet (e.g. Warriors -3 vs Raptors):
 ```python
   def betSpread(self, amount, toWin, home, away, pick, spread, league, betDate, gameDate):
     ID = self.numBets + 1
@@ -53,5 +53,6 @@ Here's the method to add a spread bet (e.g. Warriors -3 vs Raptors):
                                            home, away, pick, spread, np.nan, league, np.nan]
     self.numBets += 1
 ```
-After using these methods, the dataframes will look like this:
+After using this spread method and other similar ones, the data will look like this:
 ![pic](https://live.staticflickr.com/65535/48440711922_b93871136b_b.jpg)
+You may notice some missing values since I'm displaying the "all bets" dataframe above. This is because some bets have different features than others. For example, only spread bets have a value in the spread column, not all prop bets have a home and away team, only parlay bets have a "Bet No." to keep track of all the bets in the parlay, and so on. Using the bet type-specific dataframes will show only the relevant data to that particular bet type.
