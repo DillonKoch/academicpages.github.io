@@ -18,9 +18,9 @@ I had a week off between the end of the spring semester at the University of Iow
 
 There are four types of bets that I'll keep track of:
 * __Spread Bets:__ bets made on the outcome of a game plus or minus the spread. If the spread is Warriors -3.5, then the Warriors need to win the game by at least 4 points for this bet to cash
-* *_Money Line Bets:_* bets made purely on the outcome of the game. Betting the favorite will result in a lower payout than a spread bet if they win, while betting an underdog will pay out more money than a spread bet.
-* _*Prop Bets:*_ bets made on aspects of the game other than the final outcome. This can be a wide range of bets - a certain player's point total, whether a team scores over/under a number of points, a player to win MVP, etc.
-* Parlay Bets: A parlay bet is a bet that includes multiple bets from the first three categories. Every bet in the parlay must win for the bettor to win the parlay. If you bet a parlay made up of 5 individual bets, you won't make any money unless all 5 bets cash.
+* __Money Line Bets:__ bets made purely on the outcome of the game. Betting the favorite will result in a lower payout than a spread bet if they win, while betting an underdog will pay out more money than a spread bet.
+* __Prop Bets:__ bets made on aspects of the game other than the final outcome. This can be a wide range of bets - a certain player's point total, whether a team scores over/under a number of points, a player to win MVP, etc.
+* __Parlay Bets:__ A parlay bet is a bet that includes multiple bets from the first three categories. Every bet in the parlay must win for the bettor to win the parlay. If you bet a parlay made up of 5 individual bets, you won't make any money unless all 5 bets cash.
 
 To collect this data, I created a Python class that would create a dataframe to store data about each analyst's bets. The class is created with the bettor's name and job, and will create empty dataframes to hold bet data:
 ```python
