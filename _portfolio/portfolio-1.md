@@ -12,9 +12,15 @@ I became interested in sports betting after it was federally legalized in May 20
 I also find it much more interesting than fantasy sports because sports betting looks at the games through mostly the same lens as the players and coaches. For example, Tom Brady and Bill Belichick would be glad to win a game 13-3, as would people who bet on the Patriots. On the other hand, someone who had Tom Brady in fantasy football would probably be disappointed that he didn't score more touchdowns.
 
 ### Data Collection
-I had a week off between the spring semester at Iowa and my summer internship at Collins Aerospace, so I watched Lock It In and got the idea to begin collecting and analyzing data from the show. Every bet made on the show is displayed like image below, which made this process consistent and straightforward.
+I had a week off between the end of the spring semester at the University of Iowa and my summer internship at Collins Aerospace, so I watched Lock It In on TV and got the idea to begin collecting and analyzing data from the show. Every bet made on the show is displayed like image below, which made this process consistent and straightforward.
 
 (pic)
+
+There are four types of bets that I'll keep track of:
+* __Spread Bets:__ bets made on the outcome of a game plus or minus the spread. If the spread is Warriors -3.5, then the Warriors need to win the game by at least 4 points for this bet to cash
+* *_Money Line Bets:_* bets made purely on the outcome of the game. Betting the favorite will result in a lower payout than a spread bet if they win, while betting an underdog will pay out more money than a spread bet.
+* _*Prop Bets:*_ bets made on aspects of the game other than the final outcome. This can be a wide range of bets - a certain player's point total, whether a team scores over/under a number of points, a player to win MVP, etc.
+* Parlay Bets: A parlay bet is a bet that includes multiple bets from the first three categories. Every bet in the parlay must win for the bettor to win the parlay. If you bet a parlay made up of 5 individual bets, you won't make any money unless all 5 bets cash.
 
 To collect this data, I created a Python class that would create a dataframe to store data about each analyst's bets. The class is created with the bettor's name and job, and will create empty dataframes to hold bet data:
 ```python
@@ -71,10 +77,9 @@ To display one type of bet at a time, I also created methods with properties lik
         df = self.allBets[self.allBets['Bet No.'].notnull()]
         return df
 ```
+These methods will query each type of bet from the "all bets" dataframe and return a new dataframe with only the relevant features for that bet type.
 #### Sample Usage
-Now let's take a look at how I used this class to collect data.
-
-First, I created an instance of the Bettor class for each analyst on the show:
+To use this class, I first created an instance for each analyst on the show:
 ```python
 Sal = Bettor('Cousin Sal', 'Writer, Comedian, Podcast Host')
 Todd = Bettor('Todd Fuhrman', 'Oddsmaker, TV Analyst, Podcast Host')
