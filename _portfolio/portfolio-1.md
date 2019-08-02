@@ -39,7 +39,7 @@ class Bettor:
                                            'Bet', 'To Win', 'Home Team', 'Away Team',
                                            'Pick', 'Spread', 'Money Line', 'League', 'Outcome'])
 ```
-After creating the constructor, I also wrote methods to populate those dataframes based on the type of bet being made. There is one method for each type of bet (spread, money line, prop, parlay) since they each include slightly different data. 
+After creating the constructor, I also wrote methods to populate those dataframes based on the type of bet being made. There is one method for each type of bet (spread, money line, prop, parlay) since they each include slightly different data. Every type of bet is also added to the "all bets" dataframe as well.
 
 Here's the method to add a spread bet (e.g. Warriors -3 vs Raptors):
 ```python
@@ -53,4 +53,5 @@ Here's the method to add a spread bet (e.g. Warriors -3 vs Raptors):
                                            home, away, pick, spread, np.nan, league, np.nan]
     self.numBets += 1
 ```
-
+After using these methods, the dataframes will look like this:
+![pic](https://live.staticflickr.com/65535/48440711922_b93871136b_b.jpg)
