@@ -34,58 +34,18 @@ class Bettor:
                                'Bet', 'To Win', 'Home Team', 'Away Team',
                                'Pick', 'Spread', 'Money Line', 'League', 'Outcome'])
 ```
-After creating the constructor, I also wrote methods to populate those dataframes based on the type of bet being made:
+After creating the constructor, I also wrote methods to populate those dataframes based on the type of bet being made. There is one method for each type of bet (spread, money line, prop, parlay) since they each include slightly different data. 
+
+Here's the method to add a spread bet (e.g. Warriors -3 vs Raptors):
 ```python
   def betSpread(self, amount, toWin, home, away, pick, spread, league, betDate, gameDate):
     ID = self.numBets + 1
-      
     newRow = [ID, betDate, gameDate, amount, toWin, home, away, pick, spread, league, np.nan]
+    
+    # add the new row to dataframes including spread bets and all bets
     self.spreadBets.loc[len(self.spreadBets)] = newRow
-    
-    self.allBets.loc[len(self.allBets)] = [ID, np.nan, 'Spread', betDate, gameDate, amount, toWin, home, away, pick, spread, np.nan, league, np.nan]
-  
-    self.numBets += 1
-    
-  def betMoneyLine(self, amount, toWin, home, away, pick, moneyLine, league, betDate, gameDate):
-    ID = self.numBets + 1
-      
-    newRow = [ID, betDate, gameDate, amount, toWin, home, away, pick, moneyLine, league, np.nan]
-    self.moneyLineBets.loc[len(self.moneyLineBets)] = newRow
-    
-    self.allBets.loc[len(self.allBets)] = [ID, np.nan, 'Money Line', betDate, gameDate, amount, toWin, home, away, pick, np.nan, moneyLine, league, np.nan]
-    
-    self.numBets += 1
-
-  def betProp(self, amount, toWin, pick, moneyLine, league, betDate, gameDate, home=np.nan, away=np.nan):
-    ID = self.numBets + 1
-    
-    newRow = [ID, betDate, gameDate, amount, toWin, pick, moneyLine, league, np.nan]
-    self.propBets.loc[len(self.propBets)] = newRow
-    
-    self.allBets.loc[len(self.allBets)] = [ID, np.nan, 'Prop', betDate, gameDate, amount, toWin, home, away, pick, np.nan, moneyLine, league, np.nan]
-    
-    self.numBets += 1
-        
-  def betParlay(self, *args):
-    ID = self.numBets + 1
-    
-    numBets = 0
-    for arg in args:
-      numBets += 1
-    
-    betList = []
-    for i in range(numBets):
-      betNo = "Bet {}/{}".format(i+1, numBets)
-      betList.append(betNo)
-    
-    for i, arg in enumerate(args):
-      newRow = arg
-      newRow[0] = ID
-      newRow[1] = betList[i]
-      
-      self.parlayBets.loc[len(self.parlayBets)] = newRow
-        
-      self.allBets.loc[len(self.allBets)] = newRow
-      
+    self.allBets.loc[len(self.allBets)] = [ID, np.nan, 'Spread', betDate, gameDate, amount, toWin, 
+                                           home, away, pick, spread, np.nan, league, np.nan]
     self.numBets += 1
 ```
+
