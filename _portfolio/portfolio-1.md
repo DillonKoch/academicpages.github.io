@@ -23,40 +23,66 @@ class Bettor:
     self.name = name
     self.job = job
     self.numBets = 0
-    self.spreadBets = pd.DataFrame(columns=['ID', 'Bet Date', 'Gameday', 'Bet',
-                                            'To Win', 'Home Team', 'Away Team', 'Pick',
-                                            'Spread', 'League', 'Outcome'])
-    
-    self.moneyLineBets = pd.DataFrame(columns = ['ID', 'Bet Date', 'Gameday', 'Bet',
-                                                 'To Win', 'Home Team', 'Away Team', 'Pick',
-                                                 'Money Line', 'League', 'Outcome'])
-    
-    self.parlayBets = pd.DataFrame(columns = ['ID', 'Bet No.', 'Bet Type', 'Bet Date', 'Gameday',
-                                              'Bet', 'To Win', 'Home Team', 'Away Team',
-                                              'Pick', 'Spread', 'Money Line', 'League', 'Outcome'])
-    
-    self.propBets = pd.DataFrame(columns = ['ID', 'Bet Date', 'Gameday', 'Bet',
-                                            'To Win', 'Pick',
-                                            'Money Line', 'League', 'Outcome'])
-    
+
     self.allBets = pd.DataFrame(columns = ['ID', 'Bet No.', 'Bet Type', 'Bet Date', 'Gameday',
                                            'Bet', 'To Win', 'Home Team', 'Away Team',
                                            'Pick', 'Spread', 'Money Line', 'League', 'Outcome'])
 ```
-After creating the constructor, I also wrote methods to populate those dataframes based on the type of bet being made. There is one method for each type of bet (spread, money line, prop, parlay) since they each include slightly different data. Every type of bet is also added to the "all bets" dataframe as well.
+After creating the constructor, I also wrote methods to populate the dataframe based on the type of bet being made. There is one method for each type of bet (spread, money line, prop, parlay) since they each include slightly different data. Every type of bet is also added to the "all bets" dataframe as well.
 
 For example, here's the method I used to add a spread bet (e.g. Warriors -3 vs Raptors):
 ```python
   def betSpread(self, amount, toWin, home, away, pick, spread, league, betDate, gameDate):
     ID = self.numBets + 1
-    newRow = [ID, betDate, gameDate, amount, toWin, home, away, pick, spread, league, np.nan]
-    
-    # add the new row to dataframes including spread bets and all bets
-    self.spreadBets.loc[len(self.spreadBets)] = newRow
-    self.allBets.loc[len(self.allBets)] = [ID, np.nan, 'Spread', betDate, gameDate, amount, toWin, 
-                                           home, away, pick, spread, np.nan, league, np.nan]
+    newRow = [ID, np.nan, 'Spread', betDate, gameDate, amount, toWin, home, away, pick, 
+              spread, np.nan, league, np.nan]
+    self.allBets.loc[len(self.allBets)] = newRow
     self.numBets += 1
 ```
 After using this spread method and other similar ones, the data will look like this:
 ![pic](https://live.staticflickr.com/65535/48440711922_b93871136b_b.jpg)
 You may notice some missing values since I'm displaying the "all bets" dataframe above. This is because some bets have different features than others. For example, only spread bets have a value in the spread column, not all prop bets have a home and away team, only parlay bets have a "Bet No." to keep track of all the bets in the parlay, and so on. Using the bet type-specific dataframes will show only the relevant data to that particular bet type.
+
+To display one type of bet at a time, I also created methods with properties like this:
+```python
+    @property
+    def spreadBets(self):
+        df = self.allBets[self.allBets['Bet No.'].isnull()]
+        df = df[df['Bet Type'] == 'Spread']
+        df = df.iloc[:,[0,2,3,4,5,6,7,8,9,10,12,13]]
+        return df
+        
+    @property
+    def moneyLineBets(self):
+        df = self.allBets[self.allBets['Bet No.'].isnull()]
+        df = df[df['Bet Type'] == 'Money Line']
+        df = df.iloc[:,[0,2,3,4,5,6,7,8,9,11,12,13]]
+        return df
+    
+    @property
+    def propBets(self):
+        df = self.allBets[self.allBets['Bet No.'].isnull()]
+        df = df[df['Bet Type'] == 'Prop']
+        df = df.iloc[:,[0,2,3,4,5,6,7,8,9,11,12,13]]
+        return df
+    
+    @property
+    def parlayBets(self):
+        df = self.allBets[self.allBets['Bet No.'].notnull()]
+        return df
+```
+#### Sample Usage
+Now let's take a look at how I used this class to collect data.
+
+First, I created an instance of the Bettor class for each analyst on the show:
+```python
+Sal = Bettor('Cousin Sal', 'Writer, Comedian, Podcast Host')
+Todd = Bettor('Todd Fuhrman', 'Oddsmaker, TV Analyst, Podcast Host')
+Clay = Bettor('Clay Travis', 'Writer, Radio/Podcast Host')
+``` 
+After that all I need to do is begin adding bets each person makes using the appropriate method:
+```python
+Clay.betProp(50, 600, "Rory McIlory wins PGA Championship", 1200, "PGA", d(5, 13), d(5, 19))
+Todd.betParlay(spread(25, 43, "Sharks", "Blues", "Blues", 1.5, 'NHL', d(5, 13), d(5, 13)), 
+               moneyLine(25, 43, "Hurricanes", "Bruins", "Hurricanes", -110, 'NHL', d(5, 13), d(5, 13)))
+Sal.betSpread(50, 130, 'Raptors', 'Bucks', 'Bucks', -9.5, 'NBA', d(5, 21), d(5, 21))
