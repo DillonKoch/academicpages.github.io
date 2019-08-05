@@ -1,14 +1,13 @@
 ---
 title: "Lock It In Sports Betting Analysis (IN PROGRESS)"
-excerpt: "Data I collected and analyzed about the TV show Lock It In (not the pic below)
-
+excerpt: "Data I collected and analyzed about the TV show Lock It In"
 <br/><img src='https://live.staticflickr.com/65535/48440110437_e93350f32b_o.jpg'>"
 collection: portfolio
 ---
 
-Lock It In is a TV show on Fox Sports 1 focused on sports betting. The show is hosted by Rachel Bonetta and also includes analysts Todd Fuhrman, Clay Travis, and Cousin Sal. Each week the three analysts are given $1,000 to bet throughout the week, and they usually make 4 bets per day (20/week). Whoever has the most money at the end of the week wins.
+Lock It In is a TV show on Fox Sports 1 focused on sports betting. The show is hosted by Rachel Bonetta and also includes analysts Todd Fuhrman, Clay Travis, and Cousin Sal. Each week the three analysts are given $1,000 to bet throughout the week, and they usually make 4 bets per day (20 per week). Whoever has the most money at the end of the week wins.
 
-I became interested in sports betting after it was federally legalized in May 2018, and especially now since it's legal in Iowa as of August 2019. What's not to love about it? It's a great mix of sports and data, it makes watching games more interesting, and if you do well you can make money! 
+I became interested in sports betting after it became federally legal in May 2018, and especially now since it's legal in Iowa as of August 2019. What's not to love about it? It's a great mix of sports and data, it makes watching games more interesting, and if you do well you can make money! 
 
 I also find it much more interesting than fantasy sports because sports betting looks at the games through mostly the same lens as the players and coaches. For example, Tom Brady and Bill Belichick would be glad to win a game 13-3, as would people who bet on the Patriots. On the other hand, someone who had Tom Brady in fantasy football would probably be disappointed that he didn't score more touchdowns.
 
@@ -87,6 +86,7 @@ Todd = Bettor('Todd Fuhrman', 'Oddsmaker, TV Analyst, Podcast Host')
 Clay = Bettor('Clay Travis', 'Writer, Radio/Podcast Host')
 ``` 
 After that all I need to do is begin adding bets each person makes using the appropriate method:
+
 ```python
 Clay.betProp(50, 600, "Rory McIlory wins PGA Championship", 1200, "PGA", d(5, 13), d(5, 19))
 
