@@ -1,5 +1,5 @@
 ---
-title: "Lock It In Sports Betting Analysis"
+title: "Lock It In Sports Betting Analysis (IN PROGRESS)"
 excerpt: "Data I collected and analyzed about the TV show Lock It In (not the pic below)
 
 <br/><img src='https://live.staticflickr.com/65535/48440110437_e93350f32b_o.jpg'>"
