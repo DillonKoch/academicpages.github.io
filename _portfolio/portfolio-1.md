@@ -1,26 +1,28 @@
 ---
 title: "Lock It In Sports Betting Analysis (IN PROGRESS)"
-excerpt: "Data I collected and analyzed about the TV show Lock It In
+excerpt: "Data I collected and analyzed about the TV show Lock It In"
 <br/><img src='https://live.staticflickr.com/65535/48440110437_e93350f32b_o.jpg'>"
 collection: portfolio
 ---
 
 Lock It In is a TV show on Fox Sports 1 focused on sports betting. The show is hosted by Rachel Bonetta and also includes analysts Todd Fuhrman, Clay Travis, and Cousin Sal. Each week the three analysts are given $1,000 to bet throughout the week, and they usually make 4 bets per day (20 per week). Whoever has the most money at the end of the week wins.
 
-I became interested in sports betting after it became federally legal in May 2018, and especially now since it's legal in Iowa as of August 2019. What's not to love about it? It's a great mix of sports and data, it makes watching games more interesting, and if you do well you can make money! 
+I became interested in sports betting after it became federally legal in May 2018, and especially now since it's legal in Iowa as of August 2019. It's a great mix of sports and data, it makes watching games more interesting, and if you do well you can make money! 
 
-I also find it much more interesting than fantasy sports because sports betting looks at the games through mostly the same lens as the players and coaches. For example, Tom Brady and Bill Belichick would be glad to win a game 13-3, as would people who bet on the Patriots. On the other hand, someone who had Tom Brady in fantasy football would probably be disappointed that he didn't score more touchdowns.
+I also find it more interesting than fantasy sports because sports betting looks at the games through mostly the same lens as the players and coaches. For example, Tom Brady and Bill Belichick would be glad to win a game 13-3, as would people who bet on the Patriots. On the other hand, someone who had Tom Brady in fantasy football would probably be disappointed that he didn't score more touchdowns.
+
+### Terminology
+There are four types of bets that I'll keep track of:
+* __Spread Bets:__ bets made on the outcome of a game plus or minus the spread. If the spread is Warriors -3.5, then the Warriors need to win the game by at least 4 points to win the bet.
+* __Money Line Bets:__ bets made purely on the outcome of the game. Betting the favorite will result in a lower payout than a spread bet if they win, while betting an underdog will pay out more money than a spread bet.
+* __Prop Bets:__ bets made on aspects of the game other than the final outcome. This can be a wide range of bets - a certain player's point total, whether a team scores over/under a number of points, a player to win MVP, and so on.
+* __Parlay Bets:__ A parlay bet is a bet that includes multiple bets from the first three categories. Every bet in the parlay must win for the bettor to win the parlay. If you bet a parlay made up of 5 individual bets, you won't make any money unless all 5 bets are successful.
 
 ### Data Collection
-I had a week off between the end of the spring semester at the University of Iowa and my summer internship at Collins Aerospace, so I watched Lock It In on TV and got the idea to begin collecting and analyzing data from the show. Every bet made on the show is displayed like image below, which made this process consistent and straightforward.
+I had a week off between school and my summer internship, so I watched Lock It In on TV and got the idea to begin collecting and analyzing data from the show. Every bet made on the show is displayed like image below, which made this process consistent and straightforward.
 
 (pic)
 
-There are four types of bets that I'll keep track of:
-* __Spread Bets:__ bets made on the outcome of a game plus or minus the spread. If the spread is Warriors -3.5, then the Warriors need to win the game by at least 4 points for this bet to cash
-* __Money Line Bets:__ bets made purely on the outcome of the game. Betting the favorite will result in a lower payout than a spread bet if they win, while betting an underdog will pay out more money than a spread bet.
-* __Prop Bets:__ bets made on aspects of the game other than the final outcome. This can be a wide range of bets - a certain player's point total, whether a team scores over/under a number of points, a player to win MVP, etc.
-* __Parlay Bets:__ A parlay bet is a bet that includes multiple bets from the first three categories. Every bet in the parlay must win for the bettor to win the parlay. If you bet a parlay made up of 5 individual bets, you won't make any money unless all 5 bets cash.
 
 To collect this data, I created a Python class that would create a dataframe to store data about each analyst's bets. The class is created with the bettor's name and job, and will create empty dataframes to hold bet data:
 ```python
