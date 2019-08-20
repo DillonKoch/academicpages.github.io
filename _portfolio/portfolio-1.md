@@ -251,3 +251,17 @@ plt.xticks([0, 500, 1000, 1500, 2000, 2500, 3000],
            ['$0', '$500', '$1000', '$1500', '$2000', '$2500', '$3000'])
 ```
 ![Amount bet vs Potential Payout](https://live.staticflickr.com/65535/48587444766_793448d6db_b.jpg)
+**(I didn't plot Jason's distribution because he had much fewer bets)*
+
+Let's also take a look at the bets individually using two scatterplots. The one on the left shows all bets, while the plot on the right zooms in to view the majority of bets in more detail.
+```python
+# Plotting all bet amounts and potential payouts
+g = sns.relplot(x='Bet', y='To Win', hue='Bettor', data=df)
+plt.xlabel('Amount Bet', fontsize='large')
+plt.ylabel('Potential Payout', fontsize='large')
+plt.title('Money Bet vs Potential Payout')
+# these two lines were used in the plot on the right to zoom in:
+plt.ylim([0, 500]) 
+plt.xlim([0, 500])
+```
+![Amount Bet vs Potential Payouts](https://live.staticflickr.com/65535/48587681536_f1af97e5fa_b.jpg)
