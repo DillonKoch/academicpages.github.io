@@ -247,5 +247,6 @@ sns.distplot(todd['To Win'], hist=False, label='Todd')
 plt.xlabel('Amount Bet')
 plt.title('Distributions of Potential Payouts', fontsize='x-large')
 plt.xlim((-250, 3000))
-plt.xticks([0, 500, 1000, 1500, 2000, 2500, 3000], ['$0', '$500', '$1000', '$1500', '$2000', '$2500', '$3000'])
+plt.xticks([0, 500, 1000, 1500, 2000, 2500, 3000], 
+           ['$0', '$500', '$1000', '$1500', '$2000', '$2500', '$3000'])
 ```
