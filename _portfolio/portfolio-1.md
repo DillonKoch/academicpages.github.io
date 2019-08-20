@@ -212,7 +212,7 @@ prop_plot_df['Earnings'] = get_earnings(prop_df)            # add earnings
 After repeating similar code for the other 3 bet types, I put them all together and produced a line plot:
 ```python
 # all together
-bet_type_earnings_df = pd.concat([spread_plot_df, moneyLine_plot_df, prop_plot_df, parlay_plot_df], sort=True)
+bet_type_earnings_df = pd.concat([spread_plot_df, moneyLine_plot_df, prop_plot_df, parlay_plot_df])
 bet_type_earnings_df.drop_duplicates(subset=['Bet Date', 'Bet Type'], keep='last', inplace=True)
 bet_type_earnings_df.sort_values(by=['Bet Date'], inplace=True)
 bet_type_earnings_df
