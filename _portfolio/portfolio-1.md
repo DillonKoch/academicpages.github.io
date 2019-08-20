@@ -264,4 +264,11 @@ plt.title('Money Bet vs Potential Payout')
 plt.ylim([0, 500]) 
 plt.xlim([0, 500])
 ```
-![Amount Bet vs Potential Payouts](https://live.staticflickr.com/65535/48587681536_f1af97e5fa_b.jpg)
+![Amount Bet vs Potential Payouts](https://live.staticflickr.com/65535/48587761121_bf968ce5aa_b.jpg)
+
+Looking at the scatterplot on the left, it's clear that Clay made the bets with the highest potential payout. Having watched the show, I know that this was partially due to him losing in the season 1 show standings and trying to win a huge bet to catch up to Sal and Todd. It'll be interesting to if he still makes bets with large potential payouts in season 2 of the show.
+
+When you look at the scatterplot on the right with symmetrical axes, there appears to be two main trends of bets. The first is a trend of bets in which the potential payout increases as the amount bet increases (data points moving from the bottom left towards the top right of the plot). This is about what you'd expect - the more you bet, the more you could win. 
+
+The other trend I saw was that there are many bets with over $100 of potential payout and less than $100 bet, but only a few bets with under $100 payout and over $100 bet. This makes it very clear that the bettors preferred bets with a small chance of succeeding that could win big over bets that have a high likelihood of winning, but odds that require a large amount bet to win anything noteworthy. I think this is more a reflection of the show's structure than an optimal sports betting strategy. These bettors want to maximize their returns on $1,000 of bets every week, so placing $400 on a bet with -800 odds to win $50 aren't nearly as attractive as bets that could pay out equal or more money than the amount bet.
+
