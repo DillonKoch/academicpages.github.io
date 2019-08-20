@@ -196,3 +196,33 @@ plt.xlabel('Bet Type', fontsize='large')
 ```
 ![Clay and Sal Charts](https://live.staticflickr.com/65535/48586586806_bc7f16f7d6_b.jpg)
 ![Todd and Jason Charts](https://live.staticflickr.com/65535/48586685956_d26f20e5b7_b.jpg)
+As expected, prop bets were the most common for all four bettors. The distribution for all bet types was also fairly similar for all four people. We can also tell some of the different preferences they each have. Cousin Sal made much more moneyline bets and parlays than anyone else, Todd made much more prop bets than any other type, and Jason never made a parlay or spread bet.
+
+While we're looking at the types of bets each person made, let's take a look at the four bettors' earnings by bet type over time. 
+
+To do this, I'll make a new dataframe using the get_earnings( ) function I defined earlier. This dataframe will include all cumulative earnings over time for each individual type of bet. As an example, this is how I created the data for prop bets:
+```python 
+# prop
+prop_df = df[df['Bet Type'] == 'Prop']
+prop_df = prop_df[prop_df['Bet No.'].isnull()]              # getting rid of parlays
+prop_plot_df = prop_df.loc[:,['Bet Type', 'Bet Date']]      # only relevant columns
+prop_plot_df.sort_values(by=['Bet Date'], inplace=True)     # in order by date
+prop_plot_df['Earnings'] = get_earnings(prop_df)            # add earnings
+```
+After repeating similar code for the other 3 bet types, I put them all together and produced a line plot:
+```python
+# all together
+bet_type_earnings_df = pd.concat([spread_plot_df, moneyLine_plot_df, prop_plot_df, parlay_plot_df], sort=True)
+bet_type_earnings_df.drop_duplicates(subset=['Bet Date', 'Bet Type'], keep='last', inplace=True)
+bet_type_earnings_df.sort_values(by=['Bet Date'], inplace=True)
+bet_type_earnings_df
+```
+```python
+sns.relplot(x="Bet Date", y="Earnings", hue="Bet Type", kind='line', data=bet_type_earnings_df)
+plt.title('Earnings by Bet Type', fontsize='large')
+plt.ylabel('Cumulative Earnings', fontsize='large')
+plt.xlabel('')
+plt.xticks([0, 8, 16, 24], ['May 13', 'May 27', 'June 11', 'July 4'])
+plt.yticks([-1000, 0, 1000, 2000, 3000], ['-$1000', '$0', '$1000', '$2000', '$3000'])
+```
+![Total Earnings by Bet Type](https://live.staticflickr.com/65535/48586806456_5cc108d0e1_b.jpg)
