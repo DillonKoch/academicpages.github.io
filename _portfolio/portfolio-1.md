@@ -1,5 +1,5 @@
 ---
-title: "Lock It In Sports Betting Analysis (IN PROGRESS)"
+title: "Lock It In Sports Betting Analysis - Season 1 (IN PROGRESS)"
 excerpt: "Data I collected and analyzed about the TV show Lock It In
 <br/><img src='https://live.staticflickr.com/65535/48440110437_e93350f32b_o.jpg'>"
 collection: portfolio
@@ -167,4 +167,31 @@ plt.xticks([0, 50, 100, 150, 200])
 plt.title('Total Bets Made by Type', fontsize='x-large')
 ```
 ![Total Bets Made by Type](https://live.staticflickr.com/65535/48586431532_f5771fc7b8_b.jpg)
+Prop bets were by far the most popular type of bet from May to July. 
 
+I also wanted to analyze these bet type frequencies for each individual bettor. To do this, I created a new dataframe containing the value counts for each person and each bet type:
+```python
+# value counts of prop, moneyline, spread:
+bet_type_df = pd.DataFrame({'Clay':clay['Bet Type'].value_counts(),
+                            'Sal':sal['Bet Type'].value_counts(),
+                            'Todd':todd['Bet Type'].value_counts(),
+                            'Jason':jason['Bet Type'].value_counts()})
+bet_type_df.fillna(0, inplace=True)                 # fill NA's
+bet_type_df['Type'] = bet_type_df.index             # added column to use for seaborn
+
+# add in parlay data:
+bet_type_df = bet_type_df.append({'Clay':clay_parlays,
+                    'Sal':sal_parlays,
+                    'Todd':todd_parlays,
+                   'Jason':jason_parlays,
+                   'Type':'Parlay'}, ignore_index=True)
+```
+With this dataframe, I was able to plot each bettor's bet type frequencies. The code for Clay's plot is below (code for the other three plots were nearly identical).
+```python
+# Clay
+sns.catplot(x='Type', y='Clay', data=bet_type_df, kind='bar')
+plt.title("Clay's Bet Types", fontsize='x-large')
+plt.ylabel('Number of Bets', fontsize='large')
+plt.xlabel('Bet Type', fontsize='large')
+```
+![Clay and Sal Charts](https://live.staticflickr.com/65535/48586586806_bc7f16f7d6_b.jpg)
