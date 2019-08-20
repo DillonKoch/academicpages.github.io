@@ -1,7 +1,6 @@
 ---
 title: "Lock It In Sports Betting Analysis (IN PROGRESS)"
 excerpt: "Data I collected and analyzed about the TV show Lock It In
-
 <br/><img src='https://live.staticflickr.com/65535/48440110437_e93350f32b_o.jpg'>"
 collection: portfolio
 ---
@@ -139,7 +138,7 @@ clay['Earnings'] = get_earnings(clay)
 sal['Earnings'] = get_earnings(sal)
 jason['Earnings'] = get_earnings(jason)
 ```
-
+**Jason McIntyre filled in while Clay Travis was on vacation, so Jason had a week of bets as well*
 ### Exploratory Data Analysis
 After collecting 381 bets from the show, I created visualizations using matplotlib and seaborn to understand the data better. To create these plots, I used one dataframe for each of the four bettors' data (these are named sal, clay, todd, and jason) and one dataframe with everyone's data (df).
 
