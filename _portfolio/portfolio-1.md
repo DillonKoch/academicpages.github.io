@@ -151,7 +151,7 @@ for item in parlays['Bet No.']:
     if 'Bet 1' in item:             # only counting each parlay once
         parlay_count += 1  
 ```
-Then I 
+Then I compared the frequencies of each bet type:
 
 ```python
 # finding the original counts of bets
@@ -166,3 +166,5 @@ plt.xlabel('Amount of Bets', fontsize='x-large')
 plt.xticks([0, 50, 100, 150, 200])
 plt.title('Total Bets Made by Type', fontsize='x-large')
 ```
+![Total Bets Made by Type](https://live.staticflickr.com/65535/48586431532_f5771fc7b8_b.jpg)
+
