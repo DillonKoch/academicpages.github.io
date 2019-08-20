@@ -11,19 +11,19 @@ I became interested in sports betting after it became federally legal in May 201
 
 I also find it more interesting than fantasy sports because sports betting looks at the games through mostly the same lens as the players and coaches. For example, Tom Brady and Bill Belichick would be glad to win a game 13-3, as would people who bet on the Patriots. On the other hand, someone who had Tom Brady in fantasy football would probably be disappointed that he didn't score more touchdowns.
 
-### Terminology
-There are four types of bets that I'll keep track of:
-* __Spread Bets:__ bets made on the outcome of a game plus or minus the spread. If the spread is Warriors -3.5, then the Warriors need to win the game by at least 4 points to win the bet.
-* __Money Line Bets:__ bets made purely on the outcome of the game. Betting the favorite will result in a lower payout than a spread bet if they win, while betting an underdog will pay out more money than a spread bet.
-* __Prop Bets:__ bets made on aspects of the game other than the final outcome. This can be a wide range of bets - a certain player's point total, whether a team scores over/under a number of points, a player to win MVP, and so on.
-* __Parlay Bets:__ A parlay bet is a bet that includes multiple bets from the first three categories. Every bet in the parlay must win for the bettor to win the parlay. If you bet a parlay made up of 5 individual bets, you won't make any money unless all 5 bets are successful.
-
-### Data Collection
-I had a week off between school and my summer internship, so I watched Lock It In on TV and got the idea to begin collecting and analyzing data from the show. Every bet made on the show is displayed like image below, which made this process consistent and straightforward.
+This project began when I had a week off between school and my summer internship, so I watched Lock It In on TV and got the idea to begin collecting and analyzing data from the show. Every bet made on the show is displayed like image below, which made this process consistent and straightforward.
 
 (pic)
 
+### Terminology
+There are four types of bets that I'll keep track of:
+* __Spread Bets:__ bets made on the outcome of a game plus or minus the spread. If the spread is Warriors -3.5, then the Warriors need to win the game by at least 4 points to win the bet.
+* __Moneyline Bets:__ bets made purely on the outcome of the game. Betting the favorite will result in a lower payout than a spread bet if they win, while betting an underdog will pay out more money than a spread bet.
+* __Moneyline Notation:__ Non-spread bets are usually given with a moneyline indicating how likely the bet is to cash. Positive moneylines describe how much money you would win if you bet $100, and negative moneylines tell you how much you need to bet to win $100. For instance, betting $100 on a moneyline of +200 would pay out $200 if you win. Betting $300 on a moneyline of -300 would win you $100.
+* __Prop Bets:__ bets made on aspects of the game other than the final outcome. This can be a wide range of bets - a player's point total, whether a team scores over/under a number of points, a player to win MVP, and so on.
+* __Parlay Bets:__ A parlay bet is a bet that includes multiple bets from the first three categories. Every bet in the parlay must win for the bettor to win the parlay. If you bet a parlay made up of 5 individual bets, you won't make any money unless all 5 bets are successful.
 
+### Data Collection
 To collect this data, I created a Python class that would create a dataframe to store data about each analyst's bets. The class is created with the bettor's name and job, and will create empty dataframes to hold bet data:
 ```python
 class Bettor:
