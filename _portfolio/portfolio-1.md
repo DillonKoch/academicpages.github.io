@@ -250,3 +250,4 @@ plt.xlim((-250, 3000))
 plt.xticks([0, 500, 1000, 1500, 2000, 2500, 3000], 
            ['$0', '$500', '$1000', '$1500', '$2000', '$2500', '$3000'])
 ```
+![Amount bet vs Potential Payout](https://live.staticflickr.com/65535/48587444766_793448d6db_b.jpg)
