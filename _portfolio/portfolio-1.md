@@ -140,7 +140,29 @@ jason['Earnings'] = get_earnings(jason)
 ```
 
 ### Exploratory Data Analysis
-After collecting 381 bets from the show, I created visualizations using matplotlib and seaborn to understand the data better.
+After collecting 381 bets from the show, I created visualizations using matplotlib and seaborn to understand the data better. To create these plots, I used one dataframe for each of the four bettors' data (these are named sal, clay, todd, and jason) and one dataframe with everyone's data (df).
 
-First, I wanted to look at which types of bets were made most often by the analysts:
+First, I wanted to look at which types of bets were made most often by the analysts. To do this I had to calculate how many parlay bets were placed:
 ```python
+parlays = df[df['Bet No.'].notnull()]   # Null values indicate the bet was not a parlay
+
+parlay_count = 0
+for item in parlays['Bet No.']:
+    if 'Bet 1' in item:             # only counting each parlay once
+        parlay_count += 1  
+```
+Then I 
+
+```python
+# finding the original counts of bets
+bet_types = df['Bet Type'].value_counts()
+
+# adding in the parlays
+all_bet_types = pd.Series(list(bet_types) + [parlay_count], index=list(bet_types.index) + ['Parlay'])
+
+# creating the plot
+all_bet_types.plot(kind='barh', fontsize='x-large')
+plt.xlabel('Amount of Bets', fontsize='x-large')
+plt.xticks([0, 50, 100, 150, 200])
+plt.title('Total Bets Made by Type', fontsize='x-large')
+```
