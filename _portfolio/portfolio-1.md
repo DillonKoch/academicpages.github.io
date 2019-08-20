@@ -195,3 +195,4 @@ plt.ylabel('Number of Bets', fontsize='large')
 plt.xlabel('Bet Type', fontsize='large')
 ```
 ![Clay and Sal Charts](https://live.staticflickr.com/65535/48586586806_bc7f16f7d6_b.jpg)
+![Todd and Jason Charts](https://live.staticflickr.com/65535/48586685956_d26f20e5b7_b.jpg)
