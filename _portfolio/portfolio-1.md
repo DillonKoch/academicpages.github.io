@@ -88,7 +88,6 @@ Todd = Bettor('Todd Fuhrman', 'Oddsmaker, TV Analyst, Podcast Host')
 Clay = Bettor('Clay Travis', 'Writer, Radio/Podcast Host')
 ``` 
 After that all I need to do is begin adding bets each person makes using the appropriate method:
-
 ```python
 Clay.betProp(50, 600, "Rory McIlory wins PGA Championship", 1200, "PGA", d(5, 13), d(5, 19))
 
@@ -96,3 +95,52 @@ Todd.betParlay(spread(25, 43, "Sharks", "Blues", "Blues", 1.5, 'NHL', d(5, 13), 
              moneyLine(25, 43, "Hurricanes", "Bruins", "Hurricanes", -110, 'NHL', d(5, 13), d(5, 13)))
              
 Sal.betSpread(50, 130, 'Raptors', 'Bucks', 'Bucks', -9.5, 'NBA', d(5, 21), d(5, 21))
+
+```
+After collecting hundreds of bets like this from season 1 of the show, I was able to view all bets each bettor had made with the "allBets" member variable (e.g. Todd.allBets). Then I saved each bettor's data and started analyzing it.
+### Feature Engineering
+Before using the data, I wanted to create a feature that represented the total earnings for each bettor over time. Each bettor's earnings would begin at $0, then increase or decrease over time based on their bet outcomes. That way I can see how each bettor won or lost money over time, and see how much money everyone ended with.
+
+To create this feature, I wrote a function that could be applied to each bettor's data:
+```python
+def get_earnings(df):
+    """Calculates the cumulative earnings over time for one bettor"""
+    bet_amounts = list(df.Bet)
+    towin_amounts = list(df['To Win'])
+    outcomes = list(df.Outcome)
+    bet_no = list(df['Bet No.'])
+
+    new_earnings = []        # list to track cumulative earnings over time
+    for i in range(len(df.Bet)):
+        if i == 0:
+            if outcomes[0] == 'Win':
+                new_earnings.append(towin_amounts[0])
+            else:
+                new_earnings.append(-bet_amounts[0])
+        else:
+            if type(bet_no[i]) != str or 'Bet 1' in bet_no[i]: 
+                if outcomes[i] == 'Win':
+                    new_earnings.append(new_earnings[i-1] + towin_amounts[i])
+                else:
+                    new_earnings.append(new_earnings[i-1] - bet_amounts[i])
+            else:
+                new_earnings.append(new_earnings[-1])
+
+    return pd.Series(new_earnings, index=df.index)
+```
+
+The function began by adding the amount won/lost of the first bet to the new_earnings list, then added or subtracted money for the rest of the bets based on the outcome.
+
+Since the function returns the cumulative earnings in a pandas Series, adding the feature to the data was easy:
+```python
+todd['Earnings'] = get_earnings(todd)
+clay['Earnings'] = get_earnings(clay)
+sal['Earnings'] = get_earnings(sal)
+jason['Earnings'] = get_earnings(jason)
+```
+
+### Exploratory Data Analysis
+After collecting 381 bets from the show, I created visualizations using matplotlib and seaborn to understand the data better.
+
+First, I wanted to look at which types of bets were made most often by the analysts:
+```python
