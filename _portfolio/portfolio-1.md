@@ -196,6 +196,7 @@ plt.xlabel('Bet Type', fontsize='large')
 ```
 ![Clay and Sal Charts](https://live.staticflickr.com/65535/48586586806_bc7f16f7d6_b.jpg)
 ![Todd and Jason Charts](https://live.staticflickr.com/65535/48586685956_d26f20e5b7_b.jpg)
+
 As expected, prop bets were the most common for all four bettors. The distribution for all bet types was also fairly similar for all four people. We can also tell some of the different preferences they each have. Cousin Sal made much more moneyline bets and parlays than anyone else, Todd made much more prop bets than any other type, and Jason never made a parlay or spread bet.
 
 While we're looking at the types of bets each person made, let's take a look at the four bettors' earnings by bet type over time. 
@@ -226,3 +227,25 @@ plt.xticks([0, 8, 16, 24], ['May 13', 'May 27', 'June 11', 'July 4'])
 plt.yticks([-1000, 0, 1000, 2000, 3000], ['-$1000', '$0', '$1000', '$2000', '$3000'])
 ```
 ![Total Earnings by Bet Type](https://live.staticflickr.com/65535/48586806456_5cc108d0e1_b.jpg)
+Soemthing else I wanted to analyze was the amount wagered per bet compared to the potential winnings of those bets. Remember that each bettor gets $1,000 to make about 20 bets per week, but they can choose how much to wager on each bet. 
+
+Here's the code I used to plot the amount bet and potential payout distributions:
+```python
+# Plotting the Amount Bet Distributions
+sns.distplot(sal['Bet'], hist=False, label='Cousin Sal')
+sns.distplot(clay['Bet'], hist=False, label='Clay')
+sns.distplot(todd['Bet'], hist=False, label='Todd')
+plt.xlabel('Amount Bet')
+plt.title('Amount Bet Distributions', fontsize='x-large')
+plt.xticks([0, 200, 400, 600, 800], ['$0', '$200', '$400', '$600', '$800'])
+```
+```python
+# Plotting the Potential Payout Distributions
+sns.distplot(sal['To Win'], hist=False, label='Cousin Sal')
+sns.distplot(clay['To Win'], hist=False, label='Clay')
+sns.distplot(todd['To Win'], hist=False, label='Todd')
+plt.xlabel('Amount Bet')
+plt.title('Distributions of Potential Payouts', fontsize='x-large')
+plt.xlim((-250, 3000))
+plt.xticks([0, 500, 1000, 1500, 2000, 2500, 3000], ['$0', '$500', '$1000', '$1500', '$2000', '$2500', '$3000'])
+```
