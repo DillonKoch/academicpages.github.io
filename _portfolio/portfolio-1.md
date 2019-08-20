@@ -158,7 +158,7 @@ Then I compared the frequencies of each bet type:
 bet_types = df['Bet Type'].value_counts()
 
 # adding in the parlays
-all_bet_types = pd.Series(list(bet_types) + [parlay_count], index=list(bet_types.index) + ['Parlay'])
+all_bet_types = pd.Series(list(bet_types) + [parlay_count], index=list(bet_types.index)+['Parlay'])
 
 # creating the plot
 all_bet_types.plot(kind='barh', fontsize='x-large')
