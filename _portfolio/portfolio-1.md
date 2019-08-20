@@ -16,7 +16,6 @@ This project began when I had a week off between school and my summer internship
 (pic)
 
 ### Terminology
-There are four types of bets that I'll keep track of:
 * __Spread Bets:__ bets made on the outcome of a game plus or minus the spread. If the spread is Warriors -3.5, then the Warriors need to win the game by at least 4 points to win the bet.
 * __Moneyline Bets:__ bets made purely on the outcome of the game. Betting the favorite will result in a lower payout than a spread bet if they win, while betting an underdog will pay out more money than a spread bet.
 * __Moneyline Notation:__ Non-spread bets are usually given with a moneyline indicating how likely the bet is to cash. Positive moneylines describe how much money you would win if you bet $100, and negative moneylines tell you how much you need to bet to win $100. For instance, betting $100 on a moneyline of +200 would pay out $200 if you win. Betting $300 on a moneyline of -300 would win you $100.
