@@ -92,7 +92,7 @@ After that all I need to do is begin adding bets each person makes using the app
 Clay.betProp(50, 600, "Rory McIlory wins PGA Championship", 1200, "PGA", d(5, 13), d(5, 19))
 
 Todd.betParlay(spread(25, 43, "Sharks", "Blues", "Blues", 1.5, 'NHL', d(5, 13), d(5, 13)), 
-             moneyLine(25, 43, "Hurricanes", "Bruins", "Hurricanes", -110, 'NHL', d(5, 13), d(5, 13)))
+    moneyLine(25, 43, "Hurricanes", "Bruins", "Hurricanes", -110, 'NHL', d(5, 13), d(5, 13)))
              
 Sal.betSpread(50, 130, 'Raptors', 'Bucks', 'Bucks', -9.5, 'NBA', d(5, 21), d(5, 21))
 
