@@ -254,8 +254,10 @@ print(vergeHeadlines(content='AI', limit=5, keywords=[]))
 ![AI 5](https://live.staticflickr.com/65535/48076231618_df2667facf_b.jpg)
 My function for the Ringer works the same way as The Verge, inspecting the NFL, NBA, Tech, and Politics sections of that website.
 
-## End Result
-Finally, I use a function that combines these news-related functions together to create one big message that I send in an email to myself. The email is automatically sent via Python code from a gmail account I created for this purpose to my other email account. Running the program takes about 10 seconds in total, and is a very convenient way for me to get the news I want every day!
+## Putting it all Together
+Finally, this program will combine everything into a PDF and email it to me straight from Python. For example, the email I received on September 21st is below (the events are all from an NFL Schedule I added to my Google Calendar).
 
-If you'd like to be sent one of these emails just to see what they look like (or if you want them daily) let me know at
-dillon-koch@uiowa.edu and I'll send you one!
+![PDF1](https://live.staticflickr.com/65535/48771557806_5cbb603ccb_o.png)
+![PDF2](https://live.staticflickr.com/65535/48771557791_d22955ff4a_o.png)
+![PDF3](https://live.staticflickr.com/65535/48771222513_db4463414e_o.png)
+![PDF4](https://live.staticflickr.com/65535/48771759472_db804b3059_o.png)
