@@ -179,7 +179,7 @@ After that, I found all the headlines by searching the HTML for the 'a' tag and 
   # finding headlines
   headlines = sp.find_all('a', attrs={'class':'post-block__title__link'}, href=True)
 ```
-The next step was to create a list that includes all the headlines and links. To do this, I'll use the _*limit*_ argument this function takes, which specifies how many articles you'd like to be returned. The for loop below uses this to extract the headline text, the article link, and insert them as a tuple into _*bothList*_. 
+The next step was to create a list that includes all the headlines and links. To do this, I'll use the *limit* argument this function takes, which specifies how many articles you'd like to be returned. The for loop below uses this to extract the headline text, the article link, and insert them as a tuple into *bothList*. 
 ```python
   # adding headlines and links to bothList
   bothList = []
@@ -190,8 +190,8 @@ The next step was to create a list that includes all the headlines and links. To
     # now, newH has the text headline for each story, newL has the link to the story
     bothList.append((newH, newL))
 ```
-Once we have all the headlines and links, it's time to put them in a message that will later be inserted into an email. To do this, I begin by creating an emtpy string named *_message_*. After that, articles can be inserted in one of two ways:
-1. If a list of keywords was given to the second argument to this function, _*keywords*_, then only the articles whose headlines have one of the words/phrases from the *_keywords_* list will be included.
+Once we have all the headlines and links, it's time to put them in a message that will later be inserted into an email. To do this, I begin by creating an emtpy string named *message*. After that, articles can be inserted in one of two ways:
+1. If a list of keywords was given to the second argument to this function, *keywords*, then only the articles whose headlines have one of the words/phrases from the *keywords* list will be included.
 2. Otherwise, the function will just print out the headline and link for the number of articles you ask for.
 ```python
   # putting all the headlines and links into a final message
@@ -237,7 +237,7 @@ def vergeHeadlines(content=None, limit=5, keywords=[]):
   elif content == 'tech':
     link += '/tech'
 ```
-Instead of only taking the _*limit*_ and _*keywords*_ arguments, this function also takes one called _*content*_. This allows me to specify which type of content from the site I'd like to be returned. The options I included are:
+Instead of only taking the *limit* and *keywords* arguments, this function also takes one called *content*. This allows me to specify which type of content from the site I'd like to be returned. The options I included are:
 - Artificial Intelligence
 - Facebook
 - Amazon
