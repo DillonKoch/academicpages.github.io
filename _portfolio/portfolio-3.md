@@ -4,12 +4,12 @@ excerpt: "This is a Python program I wrote to automatically email me news I'm in
 <br/><img src='https://live.staticflickr.com/65535/48076231618_df2667facf_b.jpg'>"
 collection: portfolio
 ---
-After working on a project as a Data Science intern at Collins Aerospace in which I scraped the web for security-related news about the company and its products, I wanted to apply what I learned in another setting. I thought one useful way to use web scraping in Python would be to write a program that automatically emails me a PDF every day with news and other useful information I'm interested in.
+After working on a project as a Data Science intern at Collins Aerospace in which I scraped the web for product security-related news about the company and its products, I wanted to apply what I learned in another setting. I thought one useful way to use web scraping in Python would be to write a program that automatically emails me a PDF every day with news and other useful information I'm interested in.
 
 ### What's Included
 - Next events on my Google Calendar
 - Weather in my area
-- Charts describing my recent fitbit activity
+- My recent Fitbit activity
 - News articles
 
 ### Google Calendar Events
@@ -163,7 +163,7 @@ from datetime import date
 ```
 **Then I began writing the function for TechCrunch**
 
-This code will use the TechCrunch URL to extract the site's HTML, encode it properly, and store it in the *_sp_* variable:
+This code will use the TechCrunch URL to extract the site's HTML, encode it properly, and store it in the *sp* variable:
 ```python
 # Scraping news from TechCrunch:
 def TCheadlines(limit=3, keywords=[]):
