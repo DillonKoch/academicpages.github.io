@@ -4,4 +4,4 @@ excerpt: "This is a Python program I wrote to automatically email me news I'm in
 <br/><img src='https://live.staticflickr.com/65535/48076231618_df2667facf_b.jpg'>"
 collection: portfolio
 ---
-![ALL PDF](https://live.staticflickr.com/65535/48771789042_8099b7a009_b.jpg)
+![ALL PDF](https://live.staticflickr.com/65535/48771789042_3c93162f25_o.png)
