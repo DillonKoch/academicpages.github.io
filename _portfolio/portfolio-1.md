@@ -330,17 +330,85 @@ plt.title('Home and Away Team Wins', fontsize='x-large')
 ![pic](https://live.staticflickr.com/65535/48796199687_1f68d56f21_o.png)
 ![pic](https://live.staticflickr.com/65535/48796059161_d25aa6129f_o.png)
 
+As expected, home teams won slightly more games than away teams, but there was a bigger difference in the amount of games bet on home teams than away teams. Judging by these charts, the bettors could benefit by betting on away teams more often.
 
-![pic](https://live.staticflickr.com/65535/48795703053_d4073b4474_o.png)
+I was also interested in learning how many bets were placed on each league. Keeping in mind that the data I collected was from May to August, we can see that the NBA and MLB were bet on most frequently:
+```python
+df['League'].value_counts()[0:10].plot(kind='barh')
+plt.title('Bets Made per League', fontsize='x-large')
+plt.xlabel('Number of Bets', fontsize='x-large')
+plt.yticks(fontsize='large')
+```
 ![pic](https://live.staticflickr.com/65535/48796199757_a1aa5f0ceb_o.png)
-![pic](https://live.staticflickr.com/65535/48795703018_0ea4378b7c_o.png)
-![pic](https://live.staticflickr.com/65535/48796199717_6846cf0d5a_o.png)
-![pic](https://live.staticflickr.com/65535/48796059201_7d04a4b69c_o.png)
 
+
+To go one level deeper, I also decided to find out how successful each bettor was in each league:
+```python
+# Sample code for creating Todd's plot, all others are nearly identical
+sns.catplot(x='Earnings', y='League', kind='bar', data=byLeague(todd).sort_values(by=['Earnings']),
+           palette=sns.diverging_palette(10, 133, n=18), height=5, aspect=2)
+plt.xticks([-200, -100, 0, 100, 200, 300], ['-$200', '-$100', '$0', '$100', '$200', '$300'])
+plt.ylabel('')
+plt.title("Todd's Winnings by League", fontsize='xx-large')
+```
+![pic](https://live.staticflickr.com/65535/48795702908_cd8a6f9d36_o.png)
+![pic](https://live.staticflickr.com/65535/48796199717_6846cf0d5a_o.png)
 ![pic](https://live.staticflickr.com/65535/48795702943_bb6279c69c_o.png)
 ![pic](https://live.staticflickr.com/65535/48796199642_da440ec188_o.png)
+
+I also thought it would be interesting to look at the individual teams that were bet on most frequently, and which leagues those teams belonged to:
+```python
+all_teams = df['Home Team'].append(df['Away Team'], ignore_index=True)
+
+x = pd.DataFrame(all_teams.value_counts()[0:10])
+x['League'] = pd.Series(['NBA', 'NBA', 'Soccer', 'NHL', 'NBA', 'NBA', 'NHL', 'Soccer', "MLB", 'MLB'], index=x.index)
+x.columns = ['Bets', 'League']
+x['Team'] = x.index
+
+sns.catplot(x='Bets', y='Team', kind='bar', hue='League', dodge=False, data=x)
+plt.title('Teams Bet Most Often', fontsize='large')
+plt.ylabel('')
+plt.xlabel('Number of Bets', fontsize='large')
+```
 ![pic](https://live.staticflickr.com/65535/48796059086_cc26488887_o.png)
-![pic](https://live.staticflickr.com/65535/48795702908_cd8a6f9d36_o.png)
+
+Another idea I had was to calculate which bettor had the best and worst individual day throughout the summer. 
+
+![pic](https://live.staticflickr.com/65535/48795703053_d4073b4474_o.png)
+Cousin Sal had by far the best individual day, while Todd had the single worst day.
+
+Finally, I wanted to show how successful each bettor was overall. These two plots show bettors' win-loss records and their total earnings over time:
+```python
+# Creating Series objects with W-L records for each person
+sal_wl = sal.Outcome.value_counts()
+clay_wl = clay.Outcome.value_counts()
+todd_wl = todd.Outcome.value_counts()
+jason_wl = jason.Outcome.value_counts()
+
+# Create DataFrame with W-L records
+wl_df = pd.DataFrame([sal_wl, todd_wl, clay_wl, jason_wl], index=['Sal', 'Todd', 'Clay', 'Jason'])
+
+# create the plot
+wl_df.plot(kind='bar', color=['#F08080', '#32CD32'])
+plt.xticks(rotation=0, fontsize='large')
+plt.ylabel('Number of Bets', fontsize='x-large')
+plt.title("Win-Loss Records", fontsize='xx-large')
+plt.legend(fontsize='large')
+```
+![pic](https://live.staticflickr.com/65535/48795703018_0ea4378b7c_o.png)
+
+```python
+sns.relplot(x='Bet Date', y='Earnings', kind='line', ci=None, hue='Bettor', data=df)
+plt.xticks([0, 11, 20], ['May 13', 'June 3', 'June 19'])
+plt.xlabel('Bet Date', fontsize='large')
+plt.ylabel('Cumulative Earnings', fontsize='large')
+plt.title('Total Earnings per Person', fontsize='x-large')
+plt.yticks([-500, 0, 500, 1000, 1500, 2000, 2500, 3000],
+           ['-$500', '$0', '$500', '$1000', '$1500', '$2000', '$2500', '$3000'])
+```
+![pic](https://live.staticflickr.com/65535/48796059201_7d04a4b69c_o.png)
+We can see from the plot above that Clay led the group in the middle of the summer, but Cousin Sal finished much higher than everyone else.
+
 
 
 
