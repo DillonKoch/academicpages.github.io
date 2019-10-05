@@ -327,7 +327,7 @@ plt.xlabel('Team Status', fontsize='x-large')
 plt.title('Home and Away Team Wins', fontsize='x-large')
 ```
 
-<img style="float: right;" src="https://live.staticflickr.com/65535/48796199687_1f68d56f21_o.png">
+<img style="float: middle;" src="https://live.staticflickr.com/65535/48796199687_1f68d56f21_o.png">
 
 ![pic](https://live.staticflickr.com/65535/48796199687_1f68d56f21_o.png)
 ![pic](https://live.staticflickr.com/65535/48796059161_d25aa6129f_o.png)
