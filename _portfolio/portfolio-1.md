@@ -7,18 +7,16 @@ collection: portfolio
 
 Lock It In is a TV show on Fox Sports 1 focused on sports betting. The show is hosted by Rachel Bonetta and also includes analysts Todd Fuhrman, Clay Travis, and Cousin Sal. Each week the three analysts are given $1,000 to bet throughout the week, and they usually make 4 bets per day (20 per week). Whoever has the most money at the end of the week wins.
 
-I became interested in sports betting after it became federally legal in May 2018, and especially now since it's legal in Iowa as of August 2019. It's a great mix of sports and data, it makes watching games more interesting, and if you do well you can make money! 
+I became interested in sports betting after it became federally legal in May 2018, and especially now since it's legal in Iowa as of August 2019. I also find it more interesting than fantasy sports because sports bettors often have the same goal as the players and coaches (just win the game as a team), as opposed to the goals of someone playing fantasy football (have one particular player gain a ton of yards and score lots of touchdowns).
 
-I also find it more interesting than fantasy sports because sports betting looks at the games through mostly the same lens as the players and coaches. For example, Tom Brady and Bill Belichick would be glad to win a game 13-3, as would people who bet on the Patriots. On the other hand, someone who had Tom Brady in fantasy football would probably be disappointed that he didn't score more touchdowns.
+This project began when I had a week off between school and my summer internship, so I watched Lock It In on TV and got the idea to begin collecting and analyzing data from the show. Every bet made on the show is displayed like image below, which made the data collection process consistent and straightforward.
 
-This project began when I had a week off between school and my summer internship, so I watched Lock It In on TV and got the idea to begin collecting and analyzing data from the show. Every bet made on the show is displayed like image below, which made this process consistent and straightforward.
-
-(pic)
+![todd bet](https://live.staticflickr.com/65535/48795549558_5e995bb680_b.jpg)
 
 ### Terminology
 * __Spread Bets:__ bets made on the outcome of a game plus or minus the spread. If the spread is Warriors -3.5, then the Warriors need to win the game by at least 4 points to win the bet.
 * __Moneyline Bets:__ bets made purely on the outcome of the game. Betting the favorite will result in a lower payout than a spread bet if they win, while betting an underdog will pay out more money than a spread bet.
-* __Moneyline Notation:__ Non-spread bets are usually given with a moneyline indicating how likely the bet is to cash. Positive moneylines describe how much money you would win if you bet $100, and negative moneylines tell you how much you need to bet to win $100. For instance, betting $100 on a moneyline of +200 would pay out $200 if you win. Betting $300 on a moneyline of -300 would win you $100.
+* __Moneyline Notation:__ Most bets are usually given with a moneyline indicating how likely the bet is to cash. Positive moneylines describe how much money you would win if you bet $100, and negative moneylines tell you how much you need to bet to win $100. For instance, betting $100 on a moneyline of +200 would pay out $200 if you win. Betting $300 on a moneyline of -300 would win you $100.
 * __Prop Bets:__ bets made on aspects of the game other than the final outcome. This can be a wide range of bets - a player's point total, whether a team scores over/under a number of points, a player to win MVP, and so on.
 * __Parlay Bets:__ A parlay bet is a bet that includes multiple bets from the first three categories. Every bet in the parlay must win for the bettor to win the parlay. If you bet a parlay made up of 5 individual bets, you won't make any money unless all 5 bets are successful.
 
@@ -139,7 +137,7 @@ jason['Earnings'] = get_earnings(jason)
 ```
 **Jason McIntyre filled in while Clay Travis was on vacation, so Jason had a week of bets as well*
 ### Exploratory Data Analysis
-After collecting 381 bets from the show, I created visualizations using matplotlib and seaborn to understand the data better. To create these plots, I used one dataframe for each of the four bettors' data (these are named sal, clay, todd, and jason) and one dataframe with everyone's data (df).
+After collecting 381 bets from the show in season 1, I created visualizations using matplotlib and seaborn to understand the data better. To create these plots, I used one dataframe for each of the four bettors' data (these are named sal, clay, todd, and jason) and one dataframe with everyone's data (df).
 
 First, I wanted to look at which types of bets were made most often by the analysts. To do this I had to calculate how many parlay bets were placed:
 ```python
@@ -270,4 +268,76 @@ Looking at the scatterplot on the left, it's clear that Clay made the bets with 
 When you look at the scatterplot on the right with symmetrical axes, there appears to be two main trends of bets. The first is a trend of bets in which the potential payout increases as the amount bet increases (data points moving from the bottom left towards the top right of the plot). This is about what you'd expect - the more you bet, the more you could win. 
 
 The other trend I saw was that there are many bets with over $100 of potential payout and less than $100 bet, but only a few bets with under $100 payout and over $100 bet. This makes it very clear that the bettors preferred bets with a small chance of succeeding that could win big over bets that have a high likelihood of winning, but odds that require a large amount bet to win anything noteworthy. I think this is more a reflection of the show's structure than an optimal sports betting strategy. These bettors want to maximize their returns on $1,000 of bets every week, so placing $400 on a bet with -800 odds to win $50 aren't nearly as attractive as bets that could pay out equal or more money than the amount bet.
+
+
+I also wanted to look into how the bettors chose to bet home and away teams, and how successful those teams were. To do this I created two bar charts describing the number of bets on home and away teams, and how much those teams won.
+```python
+ha_df = df[df['Bet Type'] != 'Prop']
+
+home = list(ha_df['Home Team'])
+away = list(ha_df['Away Team'])
+bet = list(ha_df['Pick'])
+outcome = list(ha_df.Outcome)
+
+home_bet = 0
+away_bet = 0
+home_wins = 0
+home_losses = 0
+away_wins = 0
+away_losses = 0
+
+for home, away, bet, outcome in zip(home, away, bet, outcome):
+    if bet == home:
+        home_bet += 1
+        if outcome == 'Win':
+            home_wins += 1
+            away_losses += 1
+        else:
+            home_losses += 1
+            away_wins += 1
+    elif bet == away:
+        away_bet += 1
+        if outcome == 'Win':
+            away_wins += 1
+            home_losses += 1
+        else:
+            away_losses += 1
+            home_wins += 1
+
+# creating the visualizations
+
+# bets placed code
+ha_betdf = pd.DataFrame({'Number of Bets':[home_bet, away_bet],
+                          'Team Status':['Home', 'Away']})
+
+sns.catplot(x='Team Status', y='Number of Bets', data=ha_betdf, kind='bar')
+plt.ylabel('Number of Bets', fontsize='large')
+plt.xlabel('Team Status', fontsize='x-large')
+plt.title('Bets Placed on Home and Away Teams', fontsize='x-large')
+
+# home and away wins code
+ha_winsdf = pd.DataFrame({'Number of Wins':[home_wins, away_wins],
+                          'Team Status':['Home', 'Away']})
+ha_winsdf
+
+sns.catplot(x='Team Status', y='Number of Wins', kind='bar', data=ha_winsdf)
+plt.ylabel('Number of Bets', fontsize='large')
+plt.xlabel('Team Status', fontsize='x-large')
+plt.title('Home and Away Team Wins', fontsize='x-large')
+```
+
+![pic](https://live.staticflickr.com/65535/48795703053_d4073b4474_o.png)
+![pic](https://live.staticflickr.com/65535/48796199757_a1aa5f0ceb_o.png)
+![pic](https://live.staticflickr.com/65535/48795703018_0ea4378b7c_o.png)
+![pic](https://live.staticflickr.com/65535/48796199717_6846cf0d5a_o.png)
+![pic](https://live.staticflickr.com/65535/48796059201_7d04a4b69c_o.png)
+![pic](https://live.staticflickr.com/65535/48796199687_1f68d56f21_o.png)
+![pic](https://live.staticflickr.com/65535/48796059161_d25aa6129f_o.png)
+![pic](https://live.staticflickr.com/65535/48795702943_bb6279c69c_o.png)
+![pic](https://live.staticflickr.com/65535/48796199642_da440ec188_o.png)
+![pic](https://live.staticflickr.com/65535/48796059086_cc26488887_o.png)
+![pic](https://live.staticflickr.com/65535/48795702908_cd8a6f9d36_o.png)
+
+
+
 
