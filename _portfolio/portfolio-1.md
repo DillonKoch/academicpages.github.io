@@ -224,7 +224,7 @@ plt.xticks([0, 8, 16, 24], ['May 13', 'May 27', 'June 11', 'July 4'])
 plt.yticks([-1000, 0, 1000, 2000, 3000], ['-$1000', '$0', '$1000', '$2000', '$3000'])
 ```
 ![Total Earnings by Bet Type](https://live.staticflickr.com/65535/48586806456_5cc108d0e1_b.jpg)
-Soemthing else I wanted to analyze was the amount wagered per bet compared to the potential winnings of those bets. Remember that each bettor gets $1,000 to make about 20 bets per week, but they can choose how much to wager on each bet. 
+Something else I wanted to analyze was the amount wagered per bet compared to the potential winnings of those bets. Remember that each bettor gets $1,000 to make about 20 bets per week, but they can choose how much to wager on each bet. 
 
 Here's the code I used to plot the amount bet and potential payout distributions:
 ```python
@@ -248,6 +248,7 @@ plt.xticks([0, 500, 1000, 1500, 2000, 2500, 3000],
            ['$0', '$500', '$1000', '$1500', '$2000', '$2500', '$3000'])
 ```
 ![Amount bet vs Potential Payout](https://live.staticflickr.com/65535/48587444766_793448d6db_b.jpg)
+
 **(I didn't plot Jason's distribution because he had much fewer bets)*
 
 Let's also take a look at the bets individually using two scatterplots. The one on the left shows all bets, while the plot on the right zooms in to view the majority of bets in more detail.
@@ -326,13 +327,18 @@ plt.xlabel('Team Status', fontsize='x-large')
 plt.title('Home and Away Team Wins', fontsize='x-large')
 ```
 
+<img style="float: right;" src="https://live.staticflickr.com/65535/48796199687_1f68d56f21_o.png">
+
+![pic](https://live.staticflickr.com/65535/48796199687_1f68d56f21_o.png)
+![pic](https://live.staticflickr.com/65535/48796059161_d25aa6129f_o.png)
+
+
 ![pic](https://live.staticflickr.com/65535/48795703053_d4073b4474_o.png)
 ![pic](https://live.staticflickr.com/65535/48796199757_a1aa5f0ceb_o.png)
 ![pic](https://live.staticflickr.com/65535/48795703018_0ea4378b7c_o.png)
 ![pic](https://live.staticflickr.com/65535/48796199717_6846cf0d5a_o.png)
 ![pic](https://live.staticflickr.com/65535/48796059201_7d04a4b69c_o.png)
-![pic](https://live.staticflickr.com/65535/48796199687_1f68d56f21_o.png)
-![pic](https://live.staticflickr.com/65535/48796059161_d25aa6129f_o.png)
+
 ![pic](https://live.staticflickr.com/65535/48795702943_bb6279c69c_o.png)
 ![pic](https://live.staticflickr.com/65535/48796199642_da440ec188_o.png)
 ![pic](https://live.staticflickr.com/65535/48796059086_cc26488887_o.png)
