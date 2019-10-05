@@ -411,6 +411,13 @@ plt.yticks([-500, 0, 500, 1000, 1500, 2000, 2500, 3000],
 
 We can see from the plot above that Clay led the group in the middle of the summer, but Cousin Sal finished much higher than everyone else.
 
+### Predicting Future Bets
+
+
+### Future Ideas
+I'm currently collecting data for season 2 of the show, so I'll implement some of my ideas with the new data, including:
+* Using web scraping to collect data about each game
+* Collecting images of each bet from the show (like the one at the top of this page) and training an AI agent to detect data about the bet and collect it for me.
 
 
 
