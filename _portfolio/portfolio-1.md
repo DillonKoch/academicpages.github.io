@@ -375,6 +375,7 @@ plt.xlabel('Number of Bets', fontsize='large')
 Another idea I had was to calculate which bettor had the best and worst individual day throughout the summer. 
 
 ![pic](https://live.staticflickr.com/65535/48795703053_d4073b4474_o.png)
+
 Cousin Sal had by far the best individual day, while Todd had the single worst day.
 
 Finally, I wanted to show how successful each bettor was overall. These two plots show bettors' win-loss records and their total earnings over time:
@@ -407,6 +408,7 @@ plt.yticks([-500, 0, 500, 1000, 1500, 2000, 2500, 3000],
            ['-$500', '$0', '$500', '$1000', '$1500', '$2000', '$2500', '$3000'])
 ```
 ![pic](https://live.staticflickr.com/65535/48796059201_7d04a4b69c_o.png)
+
 We can see from the plot above that Clay led the group in the middle of the summer, but Cousin Sal finished much higher than everyone else.
 
 
