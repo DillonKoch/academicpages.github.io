@@ -361,7 +361,7 @@ I also thought it would be interesting to look at the individual teams that were
 all_teams = df['Home Team'].append(df['Away Team'], ignore_index=True)
 
 x = pd.DataFrame(all_teams.value_counts()[0:10])
-x['League'] = pd.Series(['NBA', 'NBA', 'Soccer', 'NHL', 'NBA', 'NBA', 'NHL', 'Soccer', "MLB", 'MLB'], index=x.index)
+x['League'] = pd.Series(['NBA','NBA','Soccer','NHL','NBA','NBA','NHL','Soccer',"MLB",'MLB'],index=x.index)
 x.columns = ['Bets', 'League']
 x['Team'] = x.index
 
