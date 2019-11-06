@@ -410,13 +410,14 @@ plt.yticks([-500, 0, 500, 1000, 1500, 2000, 2500, 3000],
 We can see from the plot above that Clay led the group in the middle of the summer, but Cousin Sal finished much higher than everyone else.
 
 ### Predicting Future Bets
-Finally, I have also begun using this data to predict the outcome of new bets that each member on the show makes. 
+Finally, I have also started using this data and data from season 2 of the show to predict the outcome of new bets as soon as each bettor on the show makes them. This can help show how each bet compares to successful bets in the past, as well as potentially help me decide which bets to make myself.
 
 ### Future Ideas
 I'm currently collecting data for season 2 of the show, so I'll implement some of my ideas with the new data, including:
-* Using web scraping to collect data about each game (final score, home and away team names, etc)
-* Collecting images of each bet from the show (like the one at the top of this page) and training an AI agent to detect data about the bet and collect it for me.
-* 
+* Using web scraping to collect data about each game (final score, team names, game time, weather, location, etc)
+* Collecting images of each bet from the show (like the one at the top of this page) and training an AI agent to detect data about the bet and collect it for me
+* Collecting data from games that are not bet on the show to get a sense of overall betting trends
+* Analyze how well my model predicts the outcome of bets that haven't occurred yet
 
 
 
