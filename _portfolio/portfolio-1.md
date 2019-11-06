@@ -7,9 +7,7 @@ collection: portfolio
 
 Lock It In is a TV show on Fox Sports 1 focused on sports betting. The show is hosted by Rachel Bonetta and also includes analysts Todd Fuhrman, Clay Travis, and Cousin Sal. Each week the three analysts are given $1,000 to bet throughout the week, and they usually make 4 bets per day (20 per week). Whoever has the most money at the end of the week wins.
 
-I became interested in sports betting after it became federally legal in May 2018, and especially now since it's legal in Iowa as of August 2019. I also find it more interesting than fantasy sports because sports bettors often have the same goal as the players and coaches (just win the game as a team), as opposed to the goals of someone playing fantasy football (have one particular player gain a ton of yards and score lots of touchdowns).
-
-This project began when I had a week off between school and my summer internship, so I watched Lock It In on TV and got the idea to begin collecting and analyzing data from the show. Every bet made on the show is displayed like image below, which made the data collection process consistent and straightforward.
+Every bet made on the show is displayed like image below, which made the data collection process consistent and straightforward.
 
 ![todd bet](https://live.staticflickr.com/65535/48795549558_5e995bb680_b.jpg)
 
